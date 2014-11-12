@@ -1,0 +1,620 @@
+
+	/*!
+ * v 0.3
+ * mallmaverick.js - 
+ * MobileFringe copywrite 2014
+ */
+ 
+var mallData = null;
+
+$(document).ready(function() {
+  $.ajaxSetup({ cache: false });
+}); 
+
+
+function setEndPoint(url){
+    sessionStorage.setItem('MM_URL', url);
+}
+
+function log(str){
+    if(typeof(console)!='undefined'){
+        console.log(str);
+    }
+}
+
+function loadMallData(callback){
+    if (mallData != null){
+        log("hey I have some mall data already!");
+        log(JSON.stringify(JSON.stringify(data)));
+    }
+    if(true){//typeof(sessionStorage.mallData) == 'undefined'){
+        log('fetching mallData from: '+sessionStorage.MM_URL);
+        $.getJSON(sessionStorage.MM_URL).done(function(data) {
+            mallData = data;
+            sessionStorage.setItem('mallData', JSON.stringify(data));
+            log('done fetching mallData from: '+sessionStorage.MM_URL);
+            callback();
+        });
+    }else{
+       callback();
+       log('mallData Already loaded');
+    }
+    
+}
+
+
+function isMallDataLoaded(){
+    if(sessionStorage.mallData && typeof(sessionStorage.mallData) != 'undefined'){
+        return true;
+    }
+    return false;
+    
+}
+
+function getRequestParam(name){
+   if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+      return decodeURIComponent(name[1]);
+}
+
+function localizeObject(mm_object){
+    
+    
+    if(sessionStorage.current_locale == sessionStorage.secondary_locale){
+        if(mm_object !== null && typeof(mm_object) != 'undefined'){
+            if(mm_object.name_2 !== null && typeof(mm_object.name_2) != 'undefined' && mm_object.name_2.length > 0){
+                mm_object.name = mm_object.name_2;
+                
+            }
+            if(mm_object.description_2 !== null && typeof(mm_object.description_2) != 'undefined' && mm_object.description_2.length > 0){
+                mm_object.description = mm_object.description_2;
+                
+            }
+            
+        }
+        
+        
+    }
+} 
+
+function getSVGMapURL(){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return 'http://cdn.mallmaverick.com' + mallDataJSON.property.svgmap_url;
+}
+
+
+function getStoresList(){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return mallDataJSON.stores;
+}
+
+
+function getStoresListByCategory(){
+    var category_stores = [];
+    
+    var all_stores = getStoresList();
+    var all_categories = getStoreCategories();
+    for (i = 0; i < all_categories.length; i++) {
+        for (j = 0; j < all_stores.length; j++) {
+            if($.inArray(parseInt(all_categories[i].id), all_stores[j].categories) > -1){
+                category_stores.push(all_stores[j]);
+            }
+        }
+    }
+    
+    return category_stores;
+}
+
+
+function getImageURL(existing_url){
+    if(!existing_url ||  existing_url.indexOf('missing.png') > -1 || existing_url.length === 0){
+        //http://css-tricks.com/snippets/html/base64-encode-of-1x1px-transparent-gif/
+        return "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+        
+    }
+    return "http://cdn.mallmaverick.com"+existing_url;
+}
+
+function getAbsoluteImageURL(existing_url){
+    if(!existing_url ||  existing_url.indexOf('missing.png') > -1 || existing_url.length === 0){
+        //http://css-tricks.com/snippets/html/base64-encode-of-1x1px-transparent-gif/
+        return "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+        
+    }
+    return existing_url;
+}
+
+function hasImage(image_url){
+    if(!image_url ||  image_url.indexOf('missing.png') > -1 || image_url.length === 0){
+        return false;
+    }
+    return true;
+}
+
+
+
+function getPromotionsList(){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return mallDataJSON.promotions;
+}
+
+function getPromotionDetailsBySlug(slug){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return getObjects(mallDataJSON.promotions,'slug',slug)[0];
+}
+
+function getEventDetailsBySlug(slug){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return getObjects(mallDataJSON.events,'slug',slug)[0];
+}
+
+function getRepoList(){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return mallDataJSON.repos;
+}
+
+function getMallMaverickImgUrl(url){
+    var MallMaverickUrl = "http://cdn.mallmaverick.com" + url;
+    return MallMaverickUrl;
+}
+
+
+
+function getPromotionsListByStoreName(){
+    var promotions = getPromotionsList();
+    $.each( promotions , function( key, val ) {
+        if(val.promotionable_type == 'Store'){
+            var store_details = getStoreDetailsByID(val.promotionable_id);
+            if (store_details){
+                val.store_name = store_details.name;
+                val.store = store_details;
+            }
+        }else{
+            val.store_name = "a";
+        }
+    });
+    return promotions.sort(sortByStoreName);
+}
+
+function getStorePromotionsListByStoreName(){
+    var promotions = getPromotionsList();
+    $.each( promotions , function( key, val ) {
+        if(val.promotionable_type == 'Store'){
+            var store_details = getStoreDetailsByID(val.promotionable_id);
+            if (store_details){
+                val.store_name = store_details.name;
+                val.store = store_details;
+            }
+        }else{
+            val.store_name = "a";
+        }
+    });
+    return promotions.sort(sortByStoreName);
+}
+
+function getPropertyPromotionsListByStoreName(){
+    var promotions = getPromotionsList();
+    $.each( promotions , function( key, val ) {
+        if(val.promotionable_type == 'Store'){
+            var store_details = getStoreDetailsByID(val.promotionable_id);
+            if (store_details){
+                val.store_name = store_details.name
+                val.store = store_details;
+            }
+        }else{
+            val.store_name = "a";
+        }
+    });
+    return promotions.sort(sortByStoreName);
+}
+
+function getPromotionsListByStoreName(){
+    var promotions = getPromotionsList();
+    $.each( promotions , function( key, val ) {
+        if(val.promotionable_type == 'Store'){
+            var store_details = getStoreDetailsByID(val.promotionable_id);
+            if (store_details){
+                val.store_name = store_details.name
+            }
+        }else{
+            val.store_name = "a";
+        }
+    });
+    return promotions.sort(sortByStoreName);
+}
+
+
+function sortByStoreName(a, b){
+  var aName = "a";
+  if(typeof(a.store_name) != 'undefined'){
+      aName = a.store_name.toLowerCase();
+  }
+  var bName = "b";
+  if(typeof(b.store_name) != 'undefined'){
+      aName = b.store_name.toLowerCase();
+  }
+  return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+}
+
+function getJobsList(){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return mallDataJSON.jobs;
+}
+
+function getEventsList(){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return mallDataJSON.events;
+}
+
+function getStoreDetailsBySlug(slug){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return getObjects(mallDataJSON.stores,'slug',slug)[0];
+}
+
+function getStoreDetailsByID(store_id){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return getObjects(mallDataJSON.stores,'id',store_id)[0];
+}
+
+function getStoreCategories(){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return mallDataJSON.categories;
+}
+
+function getPropertyDetails(){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return mallDataJSON.property;
+}
+
+function getCategoryDetails(category_id){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return getObjects(mallDataJSON.categories,'id',category_id)[0];
+}
+
+
+function getPromotionsForIds(promo_ids){
+    var promos=[];
+    var all_promos = getPromotionsList();
+    for (i = 0; i < all_promos.length; i++) {
+        for (j = 0; j < promo_ids.length; j++) { 
+            if(promo_ids[j] == all_promos[i].id){
+                promos.push(all_promos[i]);
+                
+            }
+        }
+    }
+    return promos;
+}
+
+function getJobsForIds(jobs_ids){
+    var jobs=[];
+    var all_jobs = getJobsList();
+    for (i = 0; i < all_jobs.length; i++) {
+        for (j = 0; j < jobs_ids.length; j++) { 
+            if(jobs_ids[j] == all_jobs[i].id){
+                jobs.push(all_jobs[i]);
+                
+            }
+        }
+    }
+    return jobs;
+}
+
+
+function getPropertyHours(){
+    return JSON.parse(sessionStorage.mallData).hours;
+}
+
+function getRegHoursForDayIndex(day_index){
+    var hours = getPropertyHours();
+    for (i = 0; i < hours.length; i++) {
+        if(!hours[i].is_holiday && hours[i].day_of_week == day_index){
+            return hours[i];
+        }
+    }
+}
+
+function getTodaysHours(){
+    var hours = getPropertyHours();
+    var day_of_week_hours;
+    var holiday_hours;
+    var today = new Date();
+    for (i = 0; i < hours.length; i++) {
+        if(!hours[i].is_holiday && hours[i].day_of_week == today.getDay()){
+            
+            day_of_week_hours = hours[i];
+        }
+        
+        if(hours[i].is_holiday){
+            var holiday_date = new Date(hours[i].holiday_date);
+            if(today.getMonth() == holiday_date.getMonth() && today.getDate() == holiday_date.getDate()){
+                if(hours[i].is_holiday_recurring_every_year){
+                    return hours[i];
+                }else if(today.getYear() == holiday_date.getYear()){
+                    return hours[i];
+                }
+            }
+        }
+    }
+    return day_of_week_hours;
+}
+
+
+function getObjects(obj, key, val) {
+    var objects = [];
+    for (var i in obj) {
+        if (!obj.hasOwnProperty(i)) continue;
+        if (typeof obj[i] == 'object') {
+            objects = objects.concat(getObjects(obj[i], key, val));
+        } else if (i == key && obj[key] == val) {
+            objects.push(obj);
+        }
+    }
+    return objects;
+}
+
+
+
+
+
+
+
+function applyPromoJobsStyle(store_details){
+    if(store_details.promotions.length > 0){
+            store_details.has_promotions_css = "inline;";
+        }else{
+            store_details.has_promotions_css = "none;";
+        }
+        
+        if(store_details.jobs.length > 0){
+            store_details.has_jobs_css = "inline;";
+        }else{
+            store_details.has_jobs_css = "none;";
+        }
+}
+
+
+
+
+
+function setLocaleDateFormats(hours){
+
+    var open_time = new Date(hours.open_time);
+    var close_time = new Date(hours.close_time);
+    
+    
+    
+    open_time_hour = open_time.getUTCHours();
+    var open_time_period = "AM";
+    if(open_time_hour >= 12){
+        open_time_hour = open_time_hour -12;
+        open_time_period = "PM";
+    }
+    if(open_time_hour === 0){
+        open_time_hour = 12;
+    }
+    
+    close_time_hour = close_time.getUTCHours();
+    var close_time_period = "AM";
+    if(close_time_hour > 12){
+        close_time_hour = close_time_hour -12;
+        close_time_period = "PM";
+    }
+    if(close_time_hour === 0){
+        close_time_hour = 12;
+    }
+    
+    open_time_min = open_time.getUTCMinutes();
+    if(open_time_min === 0){
+        open_time_min = "00";
+    }
+    
+    close_time_min = close_time.getUTCMinutes();
+    if(close_time_min === 0){
+        close_time_min = "00";
+    }
+    
+    
+    hours.open_time_localized = open_time_hour + ":" + open_time_min + " " + open_time_period;
+    hours.close_time_localized = close_time_hour + ":" + close_time_min + " " + close_time_period;
+    
+    if(hours.holiday_date){
+        var holiday_date = new Date(hours.holiday_date);
+        hours.holiday_date_localized = holiday_date.toDateString();
+    }
+}
+
+
+
+
+function getSearchResults(search_string,max_results,trim_description_length){
+    var search_results = {};
+    var all_stores = getStoresList();
+    var store_ids = [];
+    var stores =[];
+    var count = 0;
+    $.each( all_stores , function( key, val ) {
+        localizeObject(val);
+        if(store_ids.indexOf(val.id) == -1){
+            if(val.name.toLowerCase().indexOf(search_string.toLowerCase()) > -1){
+                val.description_trim = val.description.substring(0, trim_description_length) + "..";
+                stores.push(val);
+                store_ids.push(val.id);
+                count++;
+            }
+            if(count >= max_results){
+                return false;
+            }
+        }
+        if(store_ids.indexOf(val.id) == -1){
+            var tags_string = val.tags.join();
+            var keywords_string  = val.keywords.join();
+            if(search_string.length > 3 && (tags_string.toLowerCase().indexOf(search_string.toLowerCase()) > -1 || keywords_string.toLowerCase().indexOf(search_string.toLowerCase()) > -1)){
+                val.description_trim = val.description.substring(0, trim_description_length) + "..";
+                stores.push(val);
+                store_ids.push(val.id);
+                count++;
+            }
+            if(count >= max_results){
+                return false;
+            }
+        
+        }
+        
+    });
+    search_results['stores'] = stores;
+    if(stores.length === 0){
+        search_results['stores_header_style'] = "display:none";
+    }
+    
+    
+    
+    //we only want to keep checking promos, events or jobs descriptions if there is more that 2 search string characters, otherwise too many results
+    if(count >= max_results || search_string.length < 3){
+        search_results['summary'] = {"count":count};
+        search_results['promotions_header_style'] = "display:none";
+        search_results['events_header_style'] = "display:none";
+        search_results['jobs_header_style'] = "display:none";
+        return search_results;
+    }
+    
+    var all_promotions = getPromotionsList();
+    var promotion_ids = [];
+    var promotions =[];
+    $.each( all_promotions , function( key, val ) {
+        localizeObject(val);
+        var added = false;
+        if(promotion_ids.indexOf(val.id) == -1){
+            if(val.name.toLowerCase().indexOf(search_string.toLowerCase()) > -1){
+                val.description_trim = val.description.substring(0, trim_description_length) + "..";
+                promotions.push(val);
+                promotion_ids.push(val.id);
+                count++;
+                added = true;
+            }
+            if(count >= max_results){
+                return false;
+            }
+        }
+        if(!added){
+            
+            if(val.description.toLowerCase().indexOf(search_string.toLowerCase()) > -1){
+                val.description_trim = val.description.substring(0, trim_description_length) + "..";
+                promotions.push(val);
+                promotion_ids.push(val.id);
+                count++;
+            }
+            if(count >= max_results){
+                return false;
+            }
+        }
+    });
+    search_results['promotions'] = promotions;
+    if(promotions.length === 0){
+        search_results['promotions_header_style'] = "display:none";
+    }
+    
+    
+    var all_events = getEventsList();
+    var event_ids = [];
+    var events =[];
+    $.each( all_events , function( key, val ) {
+        localizeObject(val);
+        var added = false;
+        if(event_ids.indexOf(val.id) == -1){
+            if(val.name.toLowerCase().indexOf(search_string.toLowerCase()) > -1){
+                val.description_trim = val.description.substring(0, trim_description_length) + "..";
+                events.push(val);
+                event_ids.push(val.id);
+                added = true;
+                count++;
+            }
+            if(count >= max_results){
+                return false;
+            }
+        }
+        if(!added){
+            
+            if(val.description.toLowerCase().indexOf(search_string.toLowerCase()) > -1){
+                val.description_trim = val.description.substring(0, trim_description_length) + "..";
+                events.push(val);
+                event_ids.push(val.id);
+                count++;
+            }
+            if(count >= max_results){
+                return false;
+            }
+        }
+    });
+    search_results['events'] = events;
+    if(events.length === 0){
+        search_results['events_header_style'] = "display:none";
+    }
+    
+    var all_jobs = getJobsList();
+    var job_ids = [];
+    var jobs =[];
+    $.each( all_jobs , function( key, val ) {
+        localizeObject(val);
+        var added = false;
+        if(job_ids.indexOf(val.id) == -1){
+            if(val.name.toLowerCase().indexOf(search_string.toLowerCase()) > -1){
+                val.description_trim = val.description.substring(0, trim_description_length) + "..";
+                jobs.push(val);
+                job_ids.push(val.id);
+                added = true;
+                count++;
+            }
+            if(count >= max_results){
+                return false;
+            }
+        }
+        if(!added){
+            if(val.description.toLowerCase().indexOf(search_string.toLowerCase()) > -1){
+                val.description_trim = val.description.substring(0, trim_description_length) + "..";
+                jobs.push(val);
+                job_ids.push(val.id);
+                count++;
+            }
+            if(count >= max_results){
+                return false;
+            }
+        }
+    });
+    search_results['jobs'] = jobs;
+    if(jobs.length === 0){
+        search_results['jobs_header_style'] = "display:none";
+    }
+    
+    search_results['summary'] = {"count":count};
+    
+    
+    
+    log(search_results)
+    return search_results;
+    
+}
+
+
+function initData(){
+   
+}
+
+
+
+
+
+
+	
