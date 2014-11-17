@@ -431,7 +431,7 @@ function setLocaleDateFormats(hours){
     hours.close_time_localized = close_time_hour + ":" + close_time_min + " " + close_time_period;
     
     if(hours.holiday_date){
-        var holiday_date = new Date(hours.holiday_date+1);
+        var holiday_date = new Date(hours.holiday_date);
         hours.holiday_date_localized = holiday_date.toDateString();
     }
 }
