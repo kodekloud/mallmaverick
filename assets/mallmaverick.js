@@ -432,6 +432,7 @@ function setLocaleDateFormats(hours){
     
     if(hours.holiday_date){
         var holiday_date = new Date(hours.holiday_date);
+        console.log(holiday_date);
         hours.holiday_date_localized = holiday_date.toDateString();
     }
 }
