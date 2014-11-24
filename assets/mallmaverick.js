@@ -106,6 +106,30 @@ function getStoresListByCategory(){
     return category_stores;
 }
 
+function showOnWeb(eventObj){
+    var showDate = eventObj.show_on_web_date;
+    var dateParts = showDate.split("-");
+    
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+    
+    if(dd<10) {
+        dd='0'+dd
+    } 
+    
+    if(mm<10) {
+        mm='0'+mm
+    } 
+    
+    today = yyyy+'-'+ mm +'-'+ dd;
+    if (today >= showDate){
+       return true;
+    } else {
+        return false;
+    }
+}
 
 function getImageURL(existing_url){
     if(!existing_url ||  existing_url.indexOf('missing.png') > -1 || existing_url.length === 0){
