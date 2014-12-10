@@ -157,6 +157,11 @@ function hasImage(image_url){
 }
 
 
+function getPostList(){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return mallDataJSON.posts;
+}
 
 function getPromotionsList(){
     initData();
