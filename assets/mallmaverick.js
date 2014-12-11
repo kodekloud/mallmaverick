@@ -396,7 +396,6 @@ function getObjects(obj, key, val) {
             objects.push(obj);
         }
     }
-    console.log(objects);
     return objects;
 }
 
