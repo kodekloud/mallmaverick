@@ -162,7 +162,11 @@ function getPostList(){
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     return mallDataJSON.posts;
 }
-
+function getPostDetailsBySlug(slug){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return getObjects(mallDataJSON.posts,'slug',slug)[0];
+}
 function getPromotionsList(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
