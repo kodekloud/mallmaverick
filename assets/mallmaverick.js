@@ -191,12 +191,6 @@ function getRepoList(){
     return mallDataJSON.repos;
 }
 
-function getFeatureItems(){
-    initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    return mallDataJSON.feature_items;
-}
-
 function getMallMaverickImgUrl(url){
     var MallMaverickUrl = "http://cdn.mallmaverick.com" + url;
     return MallMaverickUrl;
