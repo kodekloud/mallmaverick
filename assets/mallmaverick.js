@@ -338,6 +338,21 @@ function getPromotionsForIds(promo_ids){
     return promos;
 }
 
+
+function getHoursForIds(hour_ids){
+    var hours=[];
+    var all_hours = getPropertyHours();
+    for (i = 0; i < all_hours.length; i++) {
+        for (j = 0; j < hour_ids.length; j++) { 
+            if(hour_ids[j] == all_hours[i].id){
+                hours.push(all_hours[i]);
+                
+            }
+        }
+    }
+    return hours;
+}
+
 function getJobsForIds(jobs_ids){
     var jobs=[];
     var all_jobs = getJobsList();
