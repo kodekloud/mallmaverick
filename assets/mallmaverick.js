@@ -65,6 +65,7 @@ function localizeObject(mm_object){
                 
             }
             if(mm_object.description_2 !== null && typeof(mm_object.description_2) != 'undefined' && mm_object.description_2.length > 0){
+                console.log('description2');
                 mm_object.description = mm_object.description_2;
             }
             
