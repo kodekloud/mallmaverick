@@ -60,7 +60,9 @@ function localizeObject(mm_object){
     
     console.log('test');
     if(sessionStorage.current_locale == sessionStorage.secondary_locale){
+            console.log('first in');
         if(mm_object !== null && typeof(mm_object) != 'undefined'){
+              console.log('second in');
             if(mm_object.name_2 !== null && typeof(mm_object.name_2) != 'undefined' && mm_object.name_2.length > 0){
                 mm_object.name = mm_object.name_2;
                 
