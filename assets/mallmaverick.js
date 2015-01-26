@@ -64,12 +64,13 @@ function localizeObject(mm_object){
         if(mm_object !== null && typeof(mm_object) != 'undefined'){
               console.log('second in');
             if(mm_object.name_2 !== null && typeof(mm_object.name_2) != 'undefined' && mm_object.name_2.length > 0){
+                  console.log('changed');
                 mm_object.name = mm_object.name_2;
                 
             }
             if(mm_object.description_2 !== null && typeof(mm_object.description_2) != 'undefined' && mm_object.description_2.length > 0){
                 mm_object.description = mm_object.description_2;
-                
+                   console.log('changed2');
             }
             
         }
