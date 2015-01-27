@@ -68,6 +68,13 @@ function localizeObject(mm_object){
                 mm_object.description = mm_object.description_2;
             }
             
+            if(mm_object.event_image2_url_abs !== null && typeof(mm_object.event_image2_url_abs) != 'undefined' && mm_object.event_image2_url_abs.length > 0){
+                mm_object.event_image_url_abs = mm_object.event_image2_url_abs;
+            }
+             
+            if(mm_object.promo_image2_url_abs !== null && typeof(mm_object.promo_image2_url_abs) != 'undefined' && mm_object.promo_image2_url_abs.length > 0){
+                mm_object.promo_image_url_abs = mm_object.promo_image2_url_abs;
+            }
         }
         
         
