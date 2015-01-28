@@ -453,12 +453,9 @@ function setLocaleDateFormats(hours){
 
     var open_time = new Date(hours.open_time);
     var close_time = new Date(hours.close_time);
-    
-  
      
     open_time_hour = open_time.getUTCHours();
     
-    console.log(open_time_hour);
     var open_time_period = "AM";
     if(open_time_hour >= 12){
         open_time_hour = open_time_hour -12;
