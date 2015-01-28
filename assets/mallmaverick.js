@@ -485,9 +485,12 @@ function setLocaleDateFormats(hours){
         close_time_min = "00";
     }
     
+    console.log(open_time_localized + "   " +close_time_localized);
     
     hours.open_time_localized = open_time_hour + ":" + open_time_min + " " + open_time_period;
     hours.close_time_localized = close_time_hour + ":" + close_time_min + " " + close_time_period;
+    
+    
     
     if(hours.holiday_date){
         var holiday_date = new Date(hours.holiday_date);
