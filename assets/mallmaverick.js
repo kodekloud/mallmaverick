@@ -419,7 +419,7 @@ function getTodaysHours(){
         }
         
     }
-    console.log(day_of_week_hours)
+ 
     if (holiday_hours){
         return holiday_hours;
     } else {
