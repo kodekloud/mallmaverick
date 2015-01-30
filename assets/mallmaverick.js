@@ -397,7 +397,7 @@ function getTodaysHours(){
     var today = new Date();
     for (i = 0; i < hours.length; i++) {
         if(!hours[i].is_holiday && hours[i].day_of_week == today.getDay()){
-            
+            console.log(hours[i])
             day_of_week_hours = hours[i];
         }
         
