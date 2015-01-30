@@ -407,9 +407,9 @@ function getTodaysHours(){
                 var holiday_date = new Date(hours[i].holiday_date);
                 if(today.getMonth() == holiday_date.getMonth() && today.getDate() == holiday_date.getDate()){
                     if(hours[i].is_holiday_recurring_every_year){
-                        return hours[i];
+                        day_of_week_hours =  hours[i];
                     }else if(today.getYear() == holiday_date.getYear()){
-                        return hours[i];
+                        day_of_week_hours =  hours[i];
                     }
                 }
             }    
