@@ -403,11 +403,9 @@ function getTodaysHours(){
                 var holiday_date = new Date(hours[i].holiday_date);
                 if(today.getMonth() == holiday_date.getMonth() && today.getDate() == holiday_date.getDate()){
                     if(hours[i].is_holiday_recurring_every_year){
-                        day_of_week_hours =  hours[i];
-                        break;
+                        holiday_hours =  hours[i];
                     }else if(today.getYear() == holiday_date.getYear()){
-                        day_of_week_hours =  hours[i];
-                        break;
+                        holiday_hours =  hours[i];
                     }
                 }
             }    
@@ -415,7 +413,6 @@ function getTodaysHours(){
             if(!hours[i].is_holiday && hours[i].day_of_week == today.getDay()){
                 
                 day_of_week_hours = hours[i];
-                break;
             }
             
             
@@ -423,7 +420,12 @@ function getTodaysHours(){
         
     }
     console.log(day_of_week_hours)
-    return day_of_week_hours;
+    if (holiday_hours){
+        return holiday_hours;
+    } else {
+        return day_of_week_hours;
+    }
+    
 }
 
 
