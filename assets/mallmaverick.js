@@ -420,7 +420,6 @@ function getTodaysHours(){
         }
         
     }
-    console.log(holiday_hours)
     if (holiday_hours){
         return holiday_hours;
     } else {
