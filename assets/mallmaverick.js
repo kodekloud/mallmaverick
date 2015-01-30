@@ -397,11 +397,6 @@ function getTodaysHours(){
     var today = new Date();
     for (i = 0; i < hours.length; i++) {
         if (hours[i].store_id === null){
-            if(!hours[i].is_holiday && hours[i].day_of_week == today.getDay()){
-                
-                day_of_week_hours = hours[i];
-                break;
-            }
             
             if(hours[i].is_holiday){
                 
@@ -416,6 +411,14 @@ function getTodaysHours(){
                     }
                 }
             }    
+            
+            if(!hours[i].is_holiday && hours[i].day_of_week == today.getDay()){
+                
+                day_of_week_hours = hours[i];
+                break;
+            }
+            
+            
         }
         
     }
