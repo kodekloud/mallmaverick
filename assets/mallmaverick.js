@@ -400,6 +400,7 @@ function getTodaysHours(){
             if(!hours[i].is_holiday && hours[i].day_of_week == today.getDay()){
                 
                 day_of_week_hours = hours[i];
+                break;
             }
             
             if(hours[i].is_holiday){
@@ -408,8 +409,10 @@ function getTodaysHours(){
                 if(today.getMonth() == holiday_date.getMonth() && today.getDate() == holiday_date.getDate()){
                     if(hours[i].is_holiday_recurring_every_year){
                         day_of_week_hours =  hours[i];
+                        break;
                     }else if(today.getYear() == holiday_date.getYear()){
                         day_of_week_hours =  hours[i];
+                        break;
                     }
                 }
             }    
