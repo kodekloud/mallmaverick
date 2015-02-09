@@ -329,6 +329,7 @@ function renderTodaysHours(template_id,html_id){
     Mustache.parse(template_html);   // optional, speeds up future uses
     //console.log(store_details);
     var day_hours = getTodaysHours();
+    localizeObject(day_hours);
     if(day_hours.is_closed){
         day_hours.is_open_css = "display:none";
         day_hours.is_closed_css = "display:inline";
@@ -347,6 +348,7 @@ function renderHolidayHours(template_id,html_id,not_empty_section_id,empty_secti
     var template_html = $(template_id).html();
     Mustache.parse(template_html);
     var count = 0;
+    localizeObject(hours);
     $.each( hours , function( key, val ) {
         if(val.is_holiday && count < num_to_show){
             
