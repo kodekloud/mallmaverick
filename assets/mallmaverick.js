@@ -79,6 +79,9 @@ function localizeObject(mm_object){
             if(mm_object.promo_image2_url_abs !== null && typeof(mm_object.promo_image2_url_abs) != 'undefined' && mm_object.promo_image2_url_abs.length > 0){
                 mm_object.promo_image_url_abs = mm_object.promo_image2_url_abs;
             }
+            if(mm_object.holiday_name_2 !== null && typeof(mm_object.holiday_name_2) != 'undefined' && mm_object.holiday_name_2.length > 0){
+                mm_object.holiday_name = mm_object.holiday_name_2;
+            }
         }
         
         
