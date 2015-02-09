@@ -91,6 +91,11 @@ function getSVGMapURL(){
     return 'http://cdn.mallmaverick.com' + mallDataJSON.property.svgmap_url;
 }
 
+function getPNGMapURL(){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return 'http://cdn.mallmaverick.com' + mallDataJSON.property.map_url;
+}
 
 function getStoresList(){
     initData();
