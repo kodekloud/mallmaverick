@@ -304,6 +304,13 @@ function getJobsList(){
     return mallDataJSON.jobs;
 }
 
+
+function getJobDetailsBySlug(slug){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return getObjects(mallDataJSON.jobs,'slug',slug)[0];
+}
+
 function getEventsList(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
