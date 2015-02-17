@@ -699,7 +699,38 @@ function initData(){
    
 }
 
+//Save contest form into MM db
+function contestIntoMM(method, dataParam){
+	var ajaxUrl = "http://mallmaverickstaging.com/" + method;
+	$.ajax({
+        url: ajaxUrl,
+        type: "POST",
+        data: dataParam,
+    	success: function(response){                        
+		    
+		},
+        error: function(xhr, ajaxOptions, thrownError){
+            alert("Please try again later.");
+		}
+    })
+}
 
+function getContestInfo(){
+    contest = {};
+    contest['id'] = NULL;
+    contest['first_name'] = NULL;
+    contest['last_name'] = NULL;
+    contest['property_id'] = NULL;
+    contest['contest_id'] = NULL;
+    contest['email'] = NULL;
+    contest['phone'] = NULL;
+    contest['postal_code'] = NULL;
+    contest['age'] = NULL;
+    contest['gender'] = NULL;
+    contest['notes'] = NULL;
+    
+    return contest;
+}
 
 
 
