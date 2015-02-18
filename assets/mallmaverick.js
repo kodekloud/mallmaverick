@@ -735,6 +735,13 @@ function getContestInfo(){
     contest['age'] = NULL;
     contest['gender'] = NULL;
     contest['notes'] = NULL;
+    contest['newsletter'] = NULL;
+    contest['created_at'] = NULL;
+    contest['updated_at'] = NULL;
+    contest['city'] = NULL;
+    contest['province'] = NULL;
+    contest['birthday'] = NULL;
+    
     
     return contest;
 }
