@@ -42,6 +42,26 @@ function loadMallData(callback){
     
 }
 
+function loadMallDataCached(callback){
+    if (mallData != null){
+        log("hey I have some mall data already!");
+        log(JSON.stringify(JSON.stringify(data)));
+    }
+    if(typeof(sessionStorage.mallData) == 'undefined'){
+        log('fetching mallData from: '+sessionStorage.MM_URL);
+        $.getJSON(sessionStorage.MM_URL).done(function(data) {
+            mallData = data;
+            sessionStorage.setItem('mallData', JSON.stringify(data));
+            log('done fetching mallData from: '+sessionStorage.MM_URL);
+            callback();
+        });
+    }else{
+       callback();
+       log('mallData Already loaded');
+    }
+    
+}
+
 
 function isMallDataLoaded(){
     if(sessionStorage.mallData && typeof(sessionStorage.mallData) != 'undefined'){
