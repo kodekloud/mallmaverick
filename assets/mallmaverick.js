@@ -708,11 +708,14 @@ function initData(){
 
 //Save contest form into MM db
 function contestIntoMM(method, dataParam){
+    var dataContest ={};
+    dataContest['contest'] = dataParam;
+    
 	var ajaxUrl = "http://mallmaverickstaging.com/" + method;
 	$.ajax({
         url: ajaxUrl,
         type: "POST",
-        data: dataParam,
+        data: dataContest,
     	success: function(response){                        
 		    
 		},
@@ -723,7 +726,7 @@ function contestIntoMM(method, dataParam){
 }
 
 function getContestInfo(){
-    contest = {};
+    var contest = {};
     contest['id'] = NULL;
     contest['first_name'] = NULL;
     contest['last_name'] = NULL;
