@@ -727,23 +727,23 @@ function contestIntoMM(method, dataParam){
 
 function getContestInfo(){
     var contest = {};
-    contest['id'] = NULL;
-    contest['first_name'] = NULL;
-    contest['last_name'] = NULL;
-    contest['property_id'] = NULL;
-    contest['contest_id'] = NULL;
-    contest['email'] = NULL;
-    contest['phone'] = NULL;
-    contest['postal_code'] = NULL;
-    contest['age'] = NULL;
-    contest['gender'] = NULL;
-    contest['notes'] = NULL;
-    contest['newsletter'] = NULL;
-    contest['created_at'] = NULL;
-    contest['updated_at'] = NULL;
-    contest['city'] = NULL;
-    contest['province'] = NULL;
-    contest['birthday'] = NULL;
+    contest['id'] = null;
+    contest['first_name'] = null;
+    contest['last_name'] = null;
+    contest['property_id'] = null;
+    contest['contest_id'] = null;
+    contest['email'] = null;
+    contest['phone'] = null;
+    contest['postal_code'] = null;
+    contest['age'] = null;
+    contest['gender'] = null;
+    contest['notes'] = null;
+    contest['newsletter'] = null;
+    contest['created_at'] = null;
+    contest['updated_at'] = null;
+    contest['city'] = null;
+    contest['province'] = null;
+    contest['birthday'] = null;
     return contest;
 }
 
