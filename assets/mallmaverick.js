@@ -741,8 +741,6 @@ function getContestInfo(){
     contest['city'] = NULL;
     contest['province'] = NULL;
     contest['birthday'] = NULL;
-    
-    
     return contest;
 }
 
