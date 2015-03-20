@@ -202,7 +202,7 @@ function getPostList(){
 function getPostDetailsBySlug(slug){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    return getObjects(mallDataJSON.posts,'slug',slug)[0];
+    return getObjects(mallDataJSON.blogs[0].posts,'slug',slug)[0];
 }
 function getPromotionsList(){
     initData();
