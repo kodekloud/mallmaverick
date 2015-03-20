@@ -197,7 +197,7 @@ function hasImage(image_url){
 function getPostList(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    return mallDataJSON.blogs;
+    return mallDataJSON.blogs[0].posts;
 }
 function getPostDetailsBySlug(slug){
     initData();
