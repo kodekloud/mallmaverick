@@ -126,6 +126,13 @@ function getStoresList(){
     return mallDataJSON.stores;
 }
 
+function getBanners(){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return mallDataJSON.banners;
+}
+
+
 
 function getStoresListByCategory(){
     var category_stores = [];
