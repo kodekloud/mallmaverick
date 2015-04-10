@@ -235,6 +235,12 @@ function getRepoList(){
     return mallDataJSON.repos;
 }
 
+function getRepoDetailsByName(name){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return getObjects(mallDataJSON.repos,'name',name)[0];
+}
+
 function getFeatureList(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
