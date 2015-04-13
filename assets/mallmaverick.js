@@ -221,8 +221,7 @@ function getPrevPostBySlug(slug){
     var prevPost;
     $.each( posts, function( index, value ) {
         prevPost = value;
-            // MAX # IS 3
-            if (item_list.length >= 3) {return false;};
+            if (value.slug == slug) {return false;};
 
             console.log($(value.tag).filter(current_post.tag).length);
             if ($(value.tag).filter(current_post.tag).length > 0 && 
