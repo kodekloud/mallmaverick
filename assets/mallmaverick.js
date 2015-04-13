@@ -231,6 +231,7 @@ function getPrevPostBySlug(slug){
                 item_list.push(value);
             };
     });
+    return prevPost;
 }
 function getNextPostBySlug(slug){
     
