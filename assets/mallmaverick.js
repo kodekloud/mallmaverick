@@ -218,6 +218,18 @@ function getPrevPostBySlug(slug){
         if(a.publish_date < b.publish_date) return 1;
         return 0;
     });
+    $.each( posts, function( index, value ) {
+            // MAX # IS 3
+            if (item_list.length >= 3) {return false;};
+
+            console.log($(value.tag).filter(current_post.tag).length);
+            if ($(value.tag).filter(current_post.tag).length > 0 && 
+                value.id != current_post.id) {
+                console.log(value);
+                value.tag_first = value.tag[0];
+                item_list.push(value);
+            };
+    });
 }
 function getNextPostBySlug(slug){
     
