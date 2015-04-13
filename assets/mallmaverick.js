@@ -213,9 +213,6 @@ function getPostDetailsBySlug(slug){
 }
 function getPrevPostBySlug(slug){
     var posts = getPostList();
-    
-    
-    
     posts.sort(function(a, b){
         if(a.publish_date > b.publish_date) return -1;
         if(a.publish_date < b.publish_date) return 1;
