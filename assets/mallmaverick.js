@@ -235,15 +235,15 @@ function getNextPostBySlug(slug){
         if(a.publish_date < b.publish_date) return 1;
         return 0;
     });
-    var nextPost;
+    var prevPost;
     $.each( posts, function( index, value ) {
-        if (value.slug == slug && ) {
+        if (value.slug == slug) {
             return false;
         }else{
             prevPost = value;
         };
     });
-    return nextPost;
+    return prevPost;
 }
 function getPromotionsList(){
     initData();
