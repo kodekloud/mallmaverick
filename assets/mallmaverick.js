@@ -229,7 +229,21 @@ function getPrevPostBySlug(slug){
     return prevPost;
 }
 function getNextPostBySlug(slug){
-    
+    var posts = getPostList();
+    posts.sort(function(a, b){
+        if(a.publish_date > b.publish_date) return -1;
+        if(a.publish_date < b.publish_date) return 1;
+        return 0;
+    });
+    var nextPost;
+    $.each( posts, function( index, value ) {
+        if (value.slug == slug) {
+            return false;
+        }else{
+            prevPost = value;
+        };
+    });
+    return nextPost;
 }
 function getPromotionsList(){
     initData();
