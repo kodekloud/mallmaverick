@@ -211,6 +211,12 @@ function getPostDetailsBySlug(slug){
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     return getObjects(mallDataJSON.blogs[0].posts,'slug',slug)[0];
 }
+function getPrevPostBySlug(slug){
+    
+}
+function getNextPostBySlug(slug){
+    
+}
 function getPromotionsList(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
