@@ -230,14 +230,14 @@ function getPrevPostBySlug(slug){
 }
 function getNextPostBySlug(slug){
     var posts = getPostList();
-    posts.sort(function(a, b){
+    posts.sort(function(b, a){
         if(a.publish_date > b.publish_date) return -1;
         if(a.publish_date < b.publish_date) return 1;
         return 0;
     });
     var nextPost;
     $.each( posts, function( index, value ) {
-        if (value.slug == slug) {
+        if (value.slug == slug && ) {
             return false;
         }else{
             prevPost = value;
