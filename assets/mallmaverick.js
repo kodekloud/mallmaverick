@@ -215,6 +215,13 @@ function getPrevPostBySlug(slug){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     return getObjects(mallDataJSON.blogs[0].posts,'slug',slug)[0]; 
+    
+    
+    item_list.sort(function(a, b){
+        if(a.publish_date > b.publish_date) return -1;
+        if(a.publish_date < b.publish_date) return 1;
+        return 0;
+    });
 }
 function getNextPostBySlug(slug){
     
