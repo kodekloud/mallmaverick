@@ -218,6 +218,7 @@ function getPrevPostBySlug(slug){
         if(a.publish_date < b.publish_date) return 1;
         return 0;
     });
+    var prevPost;
     $.each( posts, function( index, value ) {
             // MAX # IS 3
             if (item_list.length >= 3) {return false;};
