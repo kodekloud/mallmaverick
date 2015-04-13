@@ -220,6 +220,7 @@ function getPrevPostBySlug(slug){
     });
     var prevPost;
     $.each( posts, function( index, value ) {
+        prevPost = 
             // MAX # IS 3
             if (item_list.length >= 3) {return false;};
 
