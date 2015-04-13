@@ -212,9 +212,8 @@ function getPostDetailsBySlug(slug){
     return getObjects(mallDataJSON.blogs[0].posts,'slug',slug)[0];
 }
 function getPrevPostBySlug(slug){
-    initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    return getObjects(mallDataJSON.blogs[0].posts,'slug',slug)[0]; 
+    var posts = getPostList();
+    
     
     
     item_list.sort(function(a, b){
