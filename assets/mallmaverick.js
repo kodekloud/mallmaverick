@@ -225,14 +225,6 @@ function getPrevPostBySlug(slug){
         }else{
             prevPost = value;
         };
-
-            console.log($(value.tag).filter(current_post.tag).length);
-            if ($(value.tag).filter(current_post.tag).length > 0 && 
-                value.id != current_post.id) {
-                console.log(value);
-                value.tag_first = value.tag[0];
-                item_list.push(value);
-            };
     });
     return prevPost;
 }
