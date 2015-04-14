@@ -292,7 +292,7 @@ function getRepoDetailsByName(name){
 function getAssetBySlug(slug){
     var list = getRepoList();
                 console.log(list);
-    var 
+    var asset;
 
     $.each( list, function( index, repo ) {
         $.each( repo.images, function( index, item ) {
@@ -303,7 +303,7 @@ function getAssetBySlug(slug){
             };
         });
     });
-    return false;
+    return asset;
 }
 
 function getFeatureList(){
