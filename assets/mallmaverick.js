@@ -214,6 +214,8 @@ function getPostDetailsBySlug(slug){
 function getPostsByTag(tag){
     var allPosts = getPostList();
     var posts;
+                    console.log(allPosts);
+
     $.each( allPosts, function( index, value ) {
         if ($(value.tag).filter(tag).length > 0) {
             posts.push(value);
