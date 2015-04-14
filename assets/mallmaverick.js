@@ -215,7 +215,7 @@ function getPostsByTag(tag){
     var allPosts = getPostList();
     var posts;
     $.each( allPosts, function( index, value ) {
-        posts.push(obj);
+        posts.push(value);
         
     });
     return posts;
