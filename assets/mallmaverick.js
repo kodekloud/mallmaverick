@@ -224,6 +224,7 @@ function getPostsByTag(tag){
 
         };
     });
+    console.log("done");
     return posts;
 }
 function getPrevPostBySlug(slug){
