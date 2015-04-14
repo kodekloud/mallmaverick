@@ -211,7 +211,7 @@ function getPostDetailsBySlug(slug){
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     return getObjects(mallDataJSON.blogs[0].posts,'slug',slug)[0];
 }
-function getPostsByTag(slug){
+function getPostsByTag(tag){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     return getObjects(mallDataJSON.blogs[0].posts,'slug',slug)[0];
