@@ -220,6 +220,7 @@ function getPostsByTag(tag){
         $.each( value.tag, function( index, value ) {
             if(value == tag){
                 posts.push(value);
+                retrun false;
             }
         });
     });
