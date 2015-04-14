@@ -218,7 +218,7 @@ function getPostsByTag(tag){
 
     $.each( allPosts, function( index, value ) {
         console.log(value.tag);
-        if ($(value.tag).filter(tag).length > 0) {
+        if ($(value.tag).length >0 && $(value.tag).filter(tag).length > 0) {
             posts.push(value);
                 console.log(posts);
 
