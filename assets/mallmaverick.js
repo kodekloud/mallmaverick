@@ -259,6 +259,12 @@ function getNextPostBySlug(slug){
     });
     return nextPost;
 }
+function getAssetBySlug(slug){
+
+    
+}
+
+
 
 function getPromotionsList(){
     initData();
