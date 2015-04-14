@@ -219,7 +219,7 @@ function getPostsByTag(tag){
         console.log(value.tag+" "+tag);
         $.each( value.tag, function( index2, value2 ) {
             if(value2 == tag){
-                posts.push(value2);
+                posts.push(value);
             }
         });
     });
