@@ -216,7 +216,7 @@ function getPostsByTag(tag){
     var posts = [];
 
     $.each( allPosts, function( index, value ) {
-        console.log(value);
+        console.log(value.tag+" "+tag);
         if ($(value.tag).filter(tag).length > 0) {
             console.log("ok");
             posts.push(value);
