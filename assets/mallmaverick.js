@@ -259,12 +259,6 @@ function getNextPostBySlug(slug){
     });
     return nextPost;
 }
-function getAssetBySlug(slug){
-
-    
-}
-
-
 
 function getPromotionsList(){
     initData();
@@ -294,6 +288,14 @@ function getRepoDetailsByName(name){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     return getObjects(mallDataJSON.repos,'name',name)[0];
+}
+function getAssetBySlug(slug){
+    var list = getRepoList();
+    $.each( posts, function( index, value ) {
+        if (value.slug == slug) {
+            return false;
+        };
+    });
 }
 
 function getFeatureList(){
