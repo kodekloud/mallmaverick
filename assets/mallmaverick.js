@@ -293,10 +293,10 @@ function getAssetBySlug(slug){
     var list = getRepoList();
     $.each( list, function( index, value ) {
         $.each( repo, function( index, value ) {
-
-        if (value.slug == slug) {
-            return value;
-        };
+            if (value.slug == slug) {
+                return value;
+            };
+        });
     });
     return false;
 }
