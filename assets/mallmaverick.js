@@ -214,17 +214,12 @@ function getPostDetailsBySlug(slug){
 function getPostsByTag(tag){
     var allPosts = getPostList();
     var posts;
-                    console.log("OK "+allPosts);
 
     $.each( allPosts, function( index, value ) {
-        console.log(value.tag);
-        if (value.tag && $(value.tag).filter(tag).length > 0) {
+        if ($(value.tag).filter(tag).length > 0) {
             posts.push(value);
-                console.log(posts);
-
         };
     });
-    console.log("done");
     return posts;
 }
 function getPrevPostBySlug(slug){
