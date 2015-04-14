@@ -211,6 +211,11 @@ function getPostDetailsBySlug(slug){
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     return getObjects(mallDataJSON.blogs[0].posts,'slug',slug)[0];
 }
+function getPostDetailsBySlug(slug){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return getObjects(mallDataJSON.blogs[0].posts,'slug',slug)[0];
+}
 function getPrevPostBySlug(slug){
     var posts = getPostList();
     posts.sort(function(a, b){
@@ -245,6 +250,7 @@ function getNextPostBySlug(slug){
     });
     return nextPost;
 }
+
 function getPromotionsList(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
