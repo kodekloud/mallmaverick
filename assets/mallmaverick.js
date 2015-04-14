@@ -215,8 +215,9 @@ function getPostsByTag(tag){
     var allPosts = getPostList();
     var posts;
     $.each( allPosts, function( index, value ) {
-        posts.push(value);
-        
+        if ($(value.tag).filter(tag).length > 0) {
+            posts.push(value);
+        };
     });
     return posts;
 }
