@@ -291,6 +291,8 @@ function getRepoDetailsByName(name){
 }
 function getAssetBySlug(slug){
     var list = getRepoList();
+                console.log(asset);
+
     $.each( list, function( index, repo ) {
         $.each( repo, function( index, asset ) {
             console.log(asset+" "+slug);
