@@ -296,6 +296,7 @@ function getAssetBySlug(slug){
             return value;
         };
     });
+    return false;
 }
 
 function getFeatureList(){
