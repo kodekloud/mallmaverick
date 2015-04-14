@@ -294,7 +294,7 @@ function getAssetBySlug(slug){
                 console.log(list);
 
     $.each( list, function( index, repo ) {
-        $.each( repo, function( index, asset ) {
+        $.each( repo.images, function( index, asset ) {
             console.log(asset+" "+slug);
             if (asset.slug == slug) {
                 return asset;
