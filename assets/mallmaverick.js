@@ -293,7 +293,7 @@ function getAssetBySlug(slug){
     var list = getRepoList();
     $.each( asset, function( index, value ) {
         if (value.slug == slug) {
-            return false;
+            return value;
         };
     });
 }
