@@ -212,8 +212,9 @@ function getPostDetailsBySlug(slug){
     return getObjects(mallDataJSON.blogs[0].posts,'slug',slug)[0];
 }
 function getPostsByTag(tag){
-    var posts = getPostList();
-    $.each( posts, function( index, value ) {
+    var allPosts = getPostList();
+    var posts;
+    $.each( allPosts, function( index, value ) {
     
         
     });
