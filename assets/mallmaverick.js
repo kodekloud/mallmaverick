@@ -213,7 +213,10 @@ function getPostDetailsBySlug(slug){
 }
 function getPostsByTag(tag){
     var posts = getPostList();
-
+    $.each( posts, function( index, value ) {
+    
+        
+    });
     return getObjects(mallDataJSON.blogs[0].posts,'slug',slug)[0];
 }
 function getPrevPostBySlug(slug){
