@@ -293,6 +293,7 @@ function getAssetBySlug(slug){
     var list = getRepoList();
     $.each( list, function( index, repo ) {
         $.each( repo, function( index, asset ) {
+            console.log(asset.slug+" "+slug);
             if (asset.slug == slug) {
                 return asset;
             };
