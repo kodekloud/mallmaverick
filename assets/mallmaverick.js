@@ -292,7 +292,6 @@ function getRepoDetailsByName(name){
 function getAssetBySlug(slug){
     var list = getRepoList();
     var asset;
-
     $.each( list, function( index, repo ) {
         $.each( repo.images, function( index, item ) {
             if (item.slug == slug) {
