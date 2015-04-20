@@ -16,6 +16,13 @@ function setEndPoint(url){
     sessionStorage.setItem('MM_URL', url);
 }
 
+
+function get_prefix(){
+    var main_url = (sessionStorage.MM_URL).split('/');
+    var page_prefix = main_url[0]+'//'+main_url[2]
+    return page_prefix
+}
+
 function log(str){
     if(typeof(console)!='undefined'){
         console.log(str);
