@@ -232,7 +232,7 @@ function getPostsByTag(tag){
     });
     return posts;
 }
-function getPostsByTag(tag){
+function getPostsByKeyword(keyword){
     var allPosts = getPostList();
     var posts = [];
 
