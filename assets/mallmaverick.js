@@ -232,6 +232,20 @@ function getPostsByTag(tag){
     });
     return posts;
 }
+function getPostsByTag(tag){
+    var allPosts = getPostList();
+    var posts = [];
+
+    $.each( allPosts, function( index, value ) {
+        $.each( value.tag, function( index2, value2 ) {
+            if(value2 == tag){
+                posts.push(value);
+                return false;
+            }
+        });
+    });
+    return posts;
+}
 function getPrevPostBySlug(slug){
     var posts = getPostList();
     posts.sort(function(a, b){
