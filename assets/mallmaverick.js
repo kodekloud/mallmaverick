@@ -241,12 +241,6 @@ function getPostsByKeyword(keyword){
             posts.push(value);
             return false;
         }
-        $.each( value.tag, function( index2, value2 ) {
-            if(value2 == tag){
-                posts.push(value);
-                return false;
-            }
-        });
     });
     return posts;
 }
