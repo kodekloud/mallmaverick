@@ -68,7 +68,30 @@ function loadMallDataCached(callback){
     }
     
 }
+//Call a function after matching images have finished loading
+function imagesLoadedEvent(selector, callback) {
+    var This = this;
+    this.images = $(selector);
+    this.nrImagesToLoad = this.images.length;
+    this.nrImagesLoaded = 0;
 
+    //check if images have already been cached and loaded
+    $.each(this.images, function (key, img) {
+        if (img.complete) {
+            This.nrImagesLoaded++;
+        }
+        if (This.nrImagesToLoad == This.nrImagesLoaded) {
+            callback(This.images);
+        }
+    });
+
+    this.images.load(function (evt) {
+        This.nrImagesLoaded++;
+        if (This.nrImagesToLoad == This.nrImagesLoaded) {
+            callback(This.images);
+        }
+    });
+}
 
 function isMallDataLoaded(){
     if(sessionStorage.mallData && typeof(sessionStorage.mallData) != 'undefined'){
