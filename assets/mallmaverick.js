@@ -265,7 +265,12 @@ function getPostsByKeyword(keyword){
         | value.body.toLowerCase().indexOf(keyword) >= 0){
             posts.push(value);
         }else{
-            
+            $.each( value.tag, function( index2, value2 ) {
+                if(value2 == tag){
+                    posts.push(value);
+                    return false;
+                }
+            });
         }
     });
     return posts;
