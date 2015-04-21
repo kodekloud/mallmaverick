@@ -264,6 +264,8 @@ function getPostsByKeyword(keyword){
         if(value.title.toLowerCase().indexOf(keyword) >= 0 
         | value.body.toLowerCase().indexOf(keyword) >= 0){
             posts.push(value);
+        }else{
+            
         }
     });
     return posts;
