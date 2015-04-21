@@ -262,7 +262,7 @@ function getPostsByKeyword(keyword){
 
     $.each( allPosts, function( index, value ) {
         if(value.title.toLowerCase().indexOf(keyword) >= 0 |
-        value.title.toLowerCase().indexOf(keyword) >= 0){
+        value.body.toLowerCase().indexOf(keyword) >= 0){
             posts.push(value);
             return false;
         }
