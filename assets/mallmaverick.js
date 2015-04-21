@@ -266,7 +266,7 @@ function getPostsByKeyword(keyword){
             posts.push(value);
         }else{
             $.each( value.tag, function( index2, value2 ) {
-                if(value2 == tag){
+                if(value2 == keyword){
                     posts.push(value);
                     return false;
                 }
