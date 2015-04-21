@@ -255,7 +255,7 @@ function getPostsByTag(tag){
     });
     return posts;
 }
-// BLOG SEARCH BASE ON TITLE,CONTENT
+// BLOG SEARCH BASE ON TITLE,CONTENT,TAG
 function getPostsByKeyword(keyword){
     var allPosts = getPostList();
     var posts = [];
