@@ -237,7 +237,7 @@ function getBlogByName(folderName){
     var folder = [];
   
     $.each( mallDataJSON.blogs, function( index,  value) {
-        console.log(folderName);
+        console.log(folderName == value.name);
         if(value.name == folderName){
             folder.push(value);
         }
