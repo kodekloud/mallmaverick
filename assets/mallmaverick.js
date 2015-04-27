@@ -241,6 +241,7 @@ function getPostList(name){
     var folder = [];
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     $.each( mallDataJSON.blogs, function( index, value ) {
+        console.log(name);
         if(val.name == name){
             return val;
         }        
