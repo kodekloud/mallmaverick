@@ -245,7 +245,7 @@ function getPostList(name){
         if(val.name == name){
             return val;
         }        
-    }
+    });
 }
 function getPostDetailsBySlug(slug){
     initData();
