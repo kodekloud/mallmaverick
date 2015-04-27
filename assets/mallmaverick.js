@@ -230,10 +230,17 @@ function hasImage(image_url){
     return true;
 }
 
-function getBlog(){
+function getBlogByName(name){
+    
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    return mallDataJSON.blogs[0].posts;
+    console.log(mallDataJSON.blogs);
+    $.each( mallDataJSON.blogs, function( index, value ) {
+        if(value.name == name){
+            return value;
+        }
+        
+    });
 }
 
 function getPostList(){
