@@ -244,7 +244,10 @@ function getBlogByName(folderName){
     return folder[0].posts;
 }
 
-
+function getBlogDetailByName(slug, folderName){
+    var posts =  getBlogByName(folderName);
+    
+}
 
 function getPostList(){
     initData();
