@@ -246,7 +246,7 @@ function getBlogByName(folderName){
 
 function getBlogDetailByName(slug, folderName){
     var posts =  getBlogByName(folderName);
-    
+    return getObjects(posts,'slug',slug)[0];
 }
 
 function getPostList(){
