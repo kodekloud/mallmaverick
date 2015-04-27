@@ -230,13 +230,13 @@ function hasImage(image_url){
     return true;
 }
 
-function getBlogByName(name){
+function getBlogByName(folderName){
     
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     console.log(mallDataJSON.blogs);
     $.each( mallDataJSON.blogs, function( index, value ) {
-        if(value.name == name){
+        if(value.name == folderName){
             return value;
         }
         
