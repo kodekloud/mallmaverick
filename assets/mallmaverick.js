@@ -237,10 +237,11 @@ function getBlogByName(folderName){
     var folder = [];
     $.each( mallDataJSON.blogs, function( index,  value) {
         if(value.name == folderName){
-            folder.push(value);
+            //folder.push(value);
+            return value;
         }
     });
-    return folder;
+    //return folder;
 }
 
 function getPostList(){
