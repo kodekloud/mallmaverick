@@ -230,11 +230,21 @@ function hasImage(image_url){
     return true;
 }
 
-
-function getPostList(){
+function getBlogByName(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     return mallDataJSON.blogs[0].posts;
+}
+
+function getPostList(name){
+    initData();
+    var folder = [];
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    $.each( mallDataJSON.blogs, function( index, value ) {
+        if(val.name == name){
+            return val;
+        }        
+    }
 }
 function getPostDetailsBySlug(slug){
     initData();
