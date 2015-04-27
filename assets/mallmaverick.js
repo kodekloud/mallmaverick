@@ -239,8 +239,8 @@ function getBlogByName(folderName){
         if(value.name == folderName){
             folder.push(value);
         }
-        
     });
+    return folder;
 }
 
 function getPostList(){
