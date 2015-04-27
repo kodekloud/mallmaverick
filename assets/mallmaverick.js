@@ -234,11 +234,10 @@ function getBlogByName(folderName){
     
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    
+    var folder = [];
     $.each( mallDataJSON.blogs, function( index,  value) {
         if(value.name == folderName){
-            console.log(value);
-            return value;
+            folder.push(value);
         }
         
     });
