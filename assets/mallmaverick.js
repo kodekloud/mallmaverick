@@ -240,7 +240,7 @@ function getBlogByName(folderName){
             folder.push(value);
         }
     });
-    return folder[0];
+    return folder[0].posts;
 }
 
 function getPostList(){
