@@ -174,6 +174,20 @@ function getBanners(){
 }
 
 
+function get_meta(path){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    metas = mallDataJSON.meta_data;
+    for ( i = 0; i < metas.length; i++){
+        if (metas[i].path == path ){
+            console.log (metas[i])
+            meta = metas[i];
+        }
+    }
+    return meta
+}
+
+
 
 function getStoresListByCategory(){
     var category_stores = [];
