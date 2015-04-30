@@ -132,6 +132,9 @@ function localizeObject(mm_object){
             if(mm_object.holiday_name_2 !== null && typeof(mm_object.holiday_name_2) != 'undefined' && mm_object.holiday_name_2.length > 0){
                 mm_object.holiday_name = mm_object.holiday_name_2;
             }
+            if(mm_object.job_type == "Part Time"){
+                mm_object.job_type = "Temps partiel";                
+            }
         }
         
         
