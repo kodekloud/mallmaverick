@@ -185,7 +185,7 @@ function get_meta(path){
             meta = metas[i];
         }
     }
-    return meta
+     $("head").append('<meta name="description" content="'+meta.description+'">');
 }
 
 
