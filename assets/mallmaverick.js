@@ -189,6 +189,7 @@ function get_meta(path){
             meta = metas[i];
         }
     }
+     $("head").append('<meta name="title" content="'+meta.meta_description+'">');
      $("head").append('<meta name="description" content="'+meta.meta_description+'">');
      $("head").append('<meta name="keywords" content="'+meta.meta_keywords+'">');
 }   
