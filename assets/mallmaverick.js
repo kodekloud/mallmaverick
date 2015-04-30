@@ -136,9 +136,11 @@ function localizeObject(mm_object){
                 mm_object.job_type = "Temps partiel";                
             }
             if(mm_object.job_type == "Part Time/Full Time"){
-                 mm_object.job_type = "Temps partiel/"; 
+                 mm_object.job_type = "Temps partiel/Temps Plein"; 
             }if(mm_object.job_type == "Full Time"){
-                 mm_object.job_type = "Temps partiel/"; 
+                 mm_object.job_type = "Temps Plein"; 
+            }if(mm_object.job_type == "Seasonal"){
+                 mm_object.job_type = "Saisonnier"; 
             }
         }
         
