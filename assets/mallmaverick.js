@@ -180,9 +180,9 @@ function get_meta(path){
     meta = []
     metas = mallDataJSON.meta_data;
     for ( i = 0; i < metas.length; i++){
-        var pathArray2 = metas[i].path;
-        var slug = pathArray2[pathArray2.length-1];
-        console.log(pathArray2)
+        var pathArray = metas[i].path.split( '/' );;
+        var slug = pathArray[pathArray.length-1];
+        console.log(pathArray)
         console.log(slug)
         if (slug == path ){
             console.log (metas[i])
