@@ -182,6 +182,8 @@ function get_meta(slug){
     for ( i = 0; i < metas.length; i++){
         var pathArray = metas[i].path.split( '/' );
         var meta_slug = pathArray[pathArray.length-1];
+        console.log(slug)
+        console.log(meta_slug)
         if ( meta_slug == slug ){
             console.log (metas[i])
             meta = metas[i];
