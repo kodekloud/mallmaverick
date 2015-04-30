@@ -662,6 +662,8 @@ function setLocaleDateFormats(hours){
      
     open_time_hour = open_time.getUTCHours();
     
+    var open_time_hour_fr = open_time_hour;
+    
     var open_time_period = "AM";
     if(open_time_hour >= 12){
         open_time_hour = open_time_hour -12;
@@ -672,6 +674,7 @@ function setLocaleDateFormats(hours){
     }
     
     close_time_hour = close_time.getUTCHours();
+    var close_time_time_hour_fr = close_time_time_hour; 
     var close_time_period = "AM";
     if(close_time_hour > 12){
         close_time_hour = close_time_hour -12;
