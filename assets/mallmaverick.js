@@ -674,7 +674,8 @@ function setLocaleDateFormats(hours){
     }
     
     close_time_hour = close_time.getUTCHours();
-    var close_time_time_hour_fr = close_time_time_hour; 
+    var close_time_time_hour_fr = close_time_time_hour;
+    
     var close_time_period = "AM";
     if(close_time_hour > 12){
         close_time_hour = close_time_hour -12;
@@ -698,7 +699,8 @@ function setLocaleDateFormats(hours){
     hours.open_time_localized = open_time_hour + ":" + open_time_min + " " + open_time_period;
     hours.close_time_localized = close_time_hour + ":" + close_time_min + " " + close_time_period;
     
-    
+    hours.open_time_localized_fr =  open_time_hour_fr + "h" + open_time_min_fr;
+    hours.close_time_localized_fr = close_time_hour_fr + "h" + close_time_min_fr;
     
     if(hours.holiday_date){
         var holiday_date = new Date(hours.holiday_date);
