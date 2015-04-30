@@ -68,6 +68,10 @@ function loadMallDataCached(callback){
     }
     
 }
+
+function set_meta(){
+    
+}
 //Call a function after matching images have finished loading
 function imagesLoadedEvent(selector, callback) {
     var This = this;
