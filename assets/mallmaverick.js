@@ -190,7 +190,8 @@ function get_meta(path){
         }
     }
      $("head").append('<meta name="description" content="'+meta.meta_description+'">');
-}
+     $("head").append('<meta name="keywords" content="Northpark center">');
+}   
 
 
 
