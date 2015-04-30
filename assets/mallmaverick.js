@@ -686,17 +686,17 @@ function setLocaleDateFormats(hours){
     }
     
     open_time_min = open_time.getUTCMinutes();
-    var open_time_min_fr = open_time_min;
+    
     if(open_time_min === 0){
         open_time_min = "00";
     }
-    
+    var open_time_min_fr = open_time_min;
     close_time_min = close_time.getUTCMinutes();
-    var close_time_min_fr = close_time_min;
+  
     if(close_time_min === 0){
         close_time_min = "00";
     }
-    
+    var close_time_min_fr = close_time_min;
     
     hours.open_time_localized = open_time_hour + ":" + open_time_min + " " + open_time_period;
     hours.close_time_localized = close_time_hour + ":" + close_time_min + " " + close_time_period;
