@@ -177,6 +177,7 @@ function getBanners(){
 function get_meta(path){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    meta = []
     metas = mallDataJSON.meta_data;
     for ( i = 0; i < metas.length; i++){
         if (metas[i].path == path ){
