@@ -135,6 +135,11 @@ function localizeObject(mm_object){
             if(mm_object.job_type == "Part Time"){
                 mm_object.job_type = "Temps partiel";                
             }
+            if(mm_object.job_type == "Part Time/Full Time"){
+                 mm_object.job_type = "Temps partiel/"; 
+            }if(mm_object.job_type == "Full Time"){
+                 mm_object.job_type = "Temps partiel/"; 
+            }
         }
         
         
