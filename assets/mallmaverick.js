@@ -174,13 +174,15 @@ function getBanners(){
 }
 
 
-function get_meta(path){
+function get_meta(slug){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     meta = []
     metas = mallDataJSON.meta_data;
     for ( i = 0; i < metas.length; i++){
-        if (metas[i].path == path ){
+        var pathArray = metas[i].path.split( '/' );
+        var meta_slug = pathArray[pathArray.length-1];
+        if ( meta_slug == slug ){
             console.log (metas[i])
             meta = metas[i];
         }
