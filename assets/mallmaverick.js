@@ -674,7 +674,7 @@ function setLocaleDateFormats(hours){
     }
     
     close_time_hour = close_time.getUTCHours();
-    var close_time_time_hour_fr = close_time_hour;
+    var close_time_hour_fr = close_time_hour;
     
     var close_time_period = "AM";
     if(close_time_hour > 12){
