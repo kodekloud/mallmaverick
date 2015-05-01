@@ -367,6 +367,14 @@ function getPromotionsList(){
     return mallDataJSON.promotions;
 }
 
+
+function getContestBySlug(slug){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return getObjects(mallDataJSON.contests,'slug',slug)[0];
+}
+
+
 function getPromotionDetailsBySlug(slug){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
