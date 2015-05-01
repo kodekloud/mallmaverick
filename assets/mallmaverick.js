@@ -593,6 +593,12 @@ function getJobsForIds(jobs_ids){
 }
 
 
+function getPropertyID(){
+    var all_stores = getStoresList();
+    var property_id = all_stores[0].property_id
+    return property_id
+}
+
 function getPropertyHours(){
     return JSON.parse(sessionStorage.mallData).hours;
 }
