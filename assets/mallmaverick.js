@@ -173,7 +173,11 @@ function getBanners(){
     return mallDataJSON.banners;
 }
 
-
+function getPopup(){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return mallDataJSON.popups;
+}
 
 
 function get_meta(path){
