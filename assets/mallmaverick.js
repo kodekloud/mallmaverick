@@ -967,5 +967,10 @@ function getPopup(){
     return mallDataJSON.popups;
 }
 
+function getActivePopup(){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return mallDataJSON.popups;
+}
 
 	
