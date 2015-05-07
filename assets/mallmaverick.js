@@ -964,13 +964,8 @@ function getContestInfo(){
 function getPopup(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    return mallDataJSON.popups;
+    return mallDataJSON.popups[0];
 }
 
-function getActivePopup(){
-    initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    return mallDataJSON.popups;
-}
 
 	
