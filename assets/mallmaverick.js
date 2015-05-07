@@ -964,7 +964,7 @@ function getContestInfo(){
 function getPopup(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    return mallDataJSON.popups[0];
+    return mallDataJSON.popups;
 }
 
 
