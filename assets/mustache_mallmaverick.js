@@ -463,7 +463,5 @@ function renderPopup(popup_template, popup_form, popup){
         item_list.push(repo_rendered);
     });
     
-   
-    
     $(popup_form).html(item_list.join(''));
 }
