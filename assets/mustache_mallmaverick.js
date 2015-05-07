@@ -450,3 +450,20 @@ function renderAddressDirectionsTemplate(template_id,html_id,property_details){
     //console.log(rendered);
     $(html_id).html(rendered);
 }
+
+
+function renderPopup(popup_template, popup_form, popup){
+    var item_list = [];
+    var popup_template_html = $(popup_template).html();
+    Mustache.parse(popup_template_html);   // optional, speeds up future uses
+
+    $.each( popup , function( key, val ) {
+        val.photo_url = getImageURLStaging(val.photo_url);
+        var repo_rendered = Mustache.render(popup_template_html,val);
+        item_list.push(repo_rendered);
+    });
+    
+   
+    
+    $(popup_form).html(item_list.join(''));
+}
