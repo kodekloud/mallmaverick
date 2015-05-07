@@ -961,7 +961,11 @@ function getContestInfo(){
     return contest;
 }
 
-
+function getPopup(){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return mallDataJSON.events;
+}
 
 
 	
