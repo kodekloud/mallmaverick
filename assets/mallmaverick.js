@@ -535,6 +535,13 @@ function getPropertyEventsList(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     var events = mallDataJSON.events;
+    var property_events = []
+    $.each(events, function(index, value){
+        if(value.eventable_type == "Property"){
+            property_events.push(value)
+        }
+        
+    })
 }
 
 function getStoreDetailsBySlug(slug){
