@@ -541,7 +541,7 @@ function getPropertyEventsList(){
             property_events.push(value);
         }
     })
-    return propert_events;
+    return property_events;
 }
 
 function getStoreDetailsBySlug(slug){
