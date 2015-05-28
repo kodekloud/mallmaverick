@@ -540,8 +540,8 @@ function getPropertyEventsList(){
         if(value.eventable_type == "Property"){
             property_events.push(value)
         }
-        
     })
+    return propert_events;
 }
 
 function getStoreDetailsBySlug(slug){
