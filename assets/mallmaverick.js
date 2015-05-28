@@ -549,13 +549,13 @@ function getStoreEventsList(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     var events = mallDataJSON.events;
-    var property_events = []
+    var store_events = []
     $.each(events, function(index, value){
         if(value.eventable_type == "Store"){
             property_events.push(value);
         }
     })
-    return property_events;
+    return store_events;
 }
 
 function getStoreDetailsBySlug(slug){
