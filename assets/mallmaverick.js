@@ -531,6 +531,11 @@ function getEventsList(){
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     return mallDataJSON.events;
 }
+function getPropertyEventsList(){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var events = mallDataJSON.events;
+}
 
 function getStoreDetailsBySlug(slug){
     initData();
