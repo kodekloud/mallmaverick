@@ -552,7 +552,7 @@ function getStoreEventsList(){
     var store_events = []
     $.each(events, function(index, value){
         if(value.eventable_type == "Store"){
-            property_events.push(value);
+            store_events.push(value);
         }
     })
     return store_events;
