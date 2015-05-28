@@ -538,7 +538,7 @@ function getPropertyEventsList(){
     var property_events = []
     $.each(events, function(index, value){
         if(value.eventable_type == "Property"){
-            property_events.push(value)
+            property_events.push(value);
         }
     })
     return propert_events;
