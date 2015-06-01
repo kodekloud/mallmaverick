@@ -199,15 +199,15 @@ function get_meta(path){
 
 function getStoresListByCategoryID(category_id){
     var return_list=[];
-    var category_stores = getStoresListByCategory()
+    var category_stores = getStoresListByCategory();
     $.each(category_stores, function(i, val){
         if ($.inArray(category_id, val.categories) > -1){
             if ( $.inArray(category_stores[i], return_list) == -1 ){
-                return_list.push(category_stores[i])
+                return_list.push(category_stores[i]);
             }
         }
-    })
-    return return_list
+    });
+    return return_list;
 }
 
 function getStoresListByCategory(){
