@@ -202,7 +202,7 @@ function getStoresListByCategoryID(category_id){
     var category_stores = getStoresListByCategory()
     $.each(category_stores, function(i, val){
         if ($.inArray(category_id, val.categories) > -1){
-            if ( $.inArray(category_stores[i], return_list == -1 )){
+            if ( $.inArray(category_stores[i], return_list) == -1 ){
                 return_list.push(category_stores[i])
                 console.log(return_list)
             }
