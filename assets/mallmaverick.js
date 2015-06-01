@@ -198,6 +198,7 @@ function get_meta(path){
 }   
 
 function getStoresListByCategoryID(category_id){
+    var return_list = []
     var category_stores = [];
     var all_stores = getStoresList();
     var all_categories = getStoreCategories();
@@ -209,7 +210,9 @@ function getStoresListByCategoryID(category_id){
         }
     }
     $.each(categories_stores, function(i, val){
-        
+        if ($.inArray(category_id, val.categories)){
+            return_list.push(categories_stores[i])
+        }
     })
 }
 
