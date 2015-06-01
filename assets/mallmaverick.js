@@ -201,7 +201,6 @@ function get_meta(path){
 
 function getStoresListByCategory(){
     var category_stores = [];
-    
     var all_stores = getStoresList();
     var all_categories = getStoreCategories();
     for (i = 0; i < all_categories.length; i++) {
