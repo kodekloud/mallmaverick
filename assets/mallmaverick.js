@@ -208,6 +208,9 @@ function getStoresListByCategoryID(category_id){
             }
         }
     }
+    $.each(categories_stores, function(i, val){
+        
+    })
 }
 
 function getStoresListByCategory(){
