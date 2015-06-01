@@ -198,17 +198,7 @@ function get_meta(path){
 }   
 
 function getStoresListByCategoryID(category_id){
-    var return_list = []
-    var category_stores = [];
-    var all_stores = getStoresList();
-    var all_categories = getStoreCategories();
-    for (i = 0; i < all_categories.length; i++) {
-        for (j = 0; j < all_stores.length; j++) {
-            if($.inArray(parseInt(all_categories[i].id), all_stores[j].categories) > -1){
-                category_stores.push(all_stores[j]);
-            }
-        }
-    }
+    var category_stores = getStoresListByCategory()
     $.each(category_stores, function(i, val){
         if ($.inArray(category_id, val.categories) > -1){
             if ( $.inArray(category_stores[i], return_list == -1 )){
