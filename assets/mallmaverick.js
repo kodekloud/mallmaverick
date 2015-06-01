@@ -198,6 +198,7 @@ function get_meta(path){
 }   
 
 function getStoresListByCategoryID(category_id){
+    var return_list[]
     var category_stores = getStoresListByCategory()
     $.each(category_stores, function(i, val){
         if ($.inArray(category_id, val.categories) > -1){
