@@ -214,6 +214,7 @@ function getStoresListByCategoryID(category_id){
             return_list.push(categories_stores[i])
         }
     })
+    return return_list
 }
 
 function getStoresListByCategory(){
