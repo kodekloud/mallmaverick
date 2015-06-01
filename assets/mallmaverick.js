@@ -209,9 +209,9 @@ function getStoresListByCategoryID(category_id){
             }
         }
     }
-    $.each(categories_stores, function(i, val){
+    $.each(category_stores, function(i, val){
         if ($.inArray(category_id, val.categories)){
-            return_list.push(categories_stores[i])
+            return_list.push(category_stores[i])
         }
     })
     return return_list
