@@ -195,7 +195,8 @@ function get_meta(path){
      $('title').html(meta.meta_title);
      $("head").append('<meta name="description" content="'+meta.meta_description+'">');
      $("head").append('<meta name="keywords" content="'+meta.meta_keywords+'">');
-}   
+}  
+
 function getCategoriesNamesByStoreSlug(slug){
     var categories_names = ""
     var store = getStoreDetailsBySlug(slug)
