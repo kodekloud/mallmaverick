@@ -200,6 +200,7 @@ function getCategoriesNamesByStoreSlug(slug){
     var categories_names = ""
     var store = getStoreDetailsBySlug(slug)
     var categories = store.categories
+    var cat_length =  categories.length
     $.each(categories, function(i, val){
         var c = getCategoryDetails(val)
         
