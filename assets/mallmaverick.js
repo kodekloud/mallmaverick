@@ -208,13 +208,12 @@ function getCategoriesNamesByStoreSlug(slug){
             categories_names = c.name
         }
         else{
-            // if(i < cat_length-1){
-            //     categories_names = categories_names + ", " + c.name
-            // }
-            // else{
-            //     categories_names = categories_names + " and " + c.name
-            // }
-            categories_names = categories_names + "<br />" + c.name
+            if(i < cat_length-1){
+                categories_names = categories_names + ", " + c.name
+            }
+            else{
+                categories_names = categories_names + " and " + c.name
+            }
         }
     })
     return categories_names;
