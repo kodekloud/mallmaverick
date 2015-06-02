@@ -203,7 +203,9 @@ function getCategoriesNamesByStoreSlug(slug){
     var cat_length =  categories.length
     $.each(categories, function(i, val){
         var c = getCategoryDetails(val)
-        
+        if (i == 0){
+            categories_names = val.name
+        }
     })
 }
 function getStoresListByCategoryID(category_id){
