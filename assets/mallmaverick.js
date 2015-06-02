@@ -201,6 +201,7 @@ function getCategoriesNamesByStoreSlug(slug){
     var store = getStoreDetailsBySlug(slug)
     var categories = store.categories
     $.each(categories, function(i, val){
+        var c = getCategoryDetails(val)
         
     })
 }
