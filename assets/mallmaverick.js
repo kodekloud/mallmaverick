@@ -215,6 +215,7 @@ function getCategoriesNamesByStoreSlug(slug){
             }
         }
     })
+    return categories_name
 }
 function getStoresListByCategoryID(category_id){
     var return_list=[];
