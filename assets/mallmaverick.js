@@ -206,6 +206,9 @@ function getCategoriesNamesByStoreSlug(slug){
         if (i == 0){
             categories_names = val.name
         }
+        else{
+            
+        }
     })
 }
 function getStoresListByCategoryID(category_id){
