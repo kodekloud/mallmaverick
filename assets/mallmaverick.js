@@ -196,7 +196,9 @@ function get_meta(path){
      $("head").append('<meta name="description" content="'+meta.meta_description+'">');
      $("head").append('<meta name="keywords" content="'+meta.meta_keywords+'">');
 }   
-
+function getCategoriesNamesByStore(store_id){
+    
+}
 function getStoresListByCategoryID(category_id){
     var return_list=[];
     var category_stores = getStoresListByCategory();
