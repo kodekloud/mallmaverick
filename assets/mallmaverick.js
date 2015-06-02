@@ -198,6 +198,7 @@ function get_meta(path){
 }   
 function getCategoriesNamesByStoreSlug(slug){
     var store = getStoreDetailsBySlug(slug)
+    var cateries = store.categories
 }
 function getStoresListByCategoryID(category_id){
     var return_list=[];
