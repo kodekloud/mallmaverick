@@ -207,7 +207,9 @@ function getCategoriesNamesByStoreSlug(slug){
             categories_names = val.name
         }
         else{
-            
+            if(i < cat_length){
+                
+            }
         }
     })
 }
