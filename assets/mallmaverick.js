@@ -197,8 +197,12 @@ function get_meta(path){
      $("head").append('<meta name="keywords" content="'+meta.meta_keywords+'">');
 }   
 function getCategoriesNamesByStoreSlug(slug){
+    var categories_names = ""
     var store = getStoreDetailsBySlug(slug)
-    var cateries = store.categories
+    var categories = store.categories
+    $.each(categories, function(i, val){
+        
+    })
 }
 function getStoresListByCategoryID(category_id){
     var return_list=[];
