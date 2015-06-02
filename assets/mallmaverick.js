@@ -214,7 +214,7 @@ function getCategoriesNamesByStoreSlug(slug){
             // else{
             //     categories_names = categories_names + " and " + c.name
             // }
-            categories_names = categories_names + "<br />" c.name
+            categories_names = categories_names + "<br />" + c.name
         }
     })
     return categories_names;
