@@ -173,6 +173,12 @@ function getBanners(){
     return mallDataJSON.banners;
 }
 
+function getFashions(){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return mallDataJSON.banners;
+}
+
 function getPopups(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
