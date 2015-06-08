@@ -176,7 +176,7 @@ function getBanners(){
 function getFashions(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    return mallDataJSON.banners;
+    return mallDataJSON.fashions;
 }
 
 function getPopups(){
