@@ -681,7 +681,7 @@ function getPropertyID(){
 }
 
 function getPropertyHours(){
-     initData();
+    
     return JSON.parse(sessionStorage.mallData).hours;
 }
 
