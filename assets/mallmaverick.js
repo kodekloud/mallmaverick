@@ -830,6 +830,8 @@ function setLocaleDateFormats(hours){
         holiday_date.setDate(holiday_date.getDate() + 1);
         hours.holiday_date_localized = holiday_date.toDateString();
     }
+    
+    console.log(open_time);
 }
 
 
