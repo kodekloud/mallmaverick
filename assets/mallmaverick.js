@@ -416,13 +416,9 @@ function getPromotionsList(){
     return mallDataJSON.promotions;
 }
 
-function getFeaturePromotionsList(){
-    initData();
-    var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    var feature_promos = []
-    $.each( mallDataJSON.promotions , function( key, val ) {
-       console.log(val) 
-    });
+
+function getContestList(){
+    
 }
 
 
