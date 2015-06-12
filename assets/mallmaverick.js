@@ -418,7 +418,9 @@ function getPromotionsList(){
 
 
 function getContestList(){
-    
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    return mallDataJSON.contests;
 }
 
 
