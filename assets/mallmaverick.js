@@ -808,6 +808,7 @@ function setLocaleDateFormats(hours){
     var open_time_min_fr = open_time_min;
     if(open_time_min === 0){
         open_time_min = "00";
+        open_time_min_fr = "";
     }
     
     
@@ -815,6 +816,7 @@ function setLocaleDateFormats(hours){
     var close_time_min_fr = close_time_min;
     if(close_time_min === 0){
         close_time_min = "00";
+        close_time_min = "";
     }
     
     
