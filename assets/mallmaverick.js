@@ -810,6 +810,7 @@ function setLocaleDateFormats(hours){
         open_time_min = "00";
     }
     var open_time_min_fr = open_time_min;
+    
     close_time_min = close_time.getUTCMinutes();
     var close_time_min_fr = close_time_min;
     if(close_time_min === 0){
