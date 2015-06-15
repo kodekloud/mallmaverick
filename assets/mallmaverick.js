@@ -816,7 +816,7 @@ function setLocaleDateFormats(hours){
     var close_time_min_fr = close_time_min;
     if(close_time_min === 0){
         close_time_min = "00";
-        close_time_min = "";
+        close_time_min_fr = "";
     }
     
     
