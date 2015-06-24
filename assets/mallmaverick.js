@@ -331,6 +331,11 @@ function getBlogDetailByName(slug, folderName){
     return getObjects(posts,'slug',slug)[0];
 }
 
+function getBlogBySlug(slug){
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+}
+
 function getPostList(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
