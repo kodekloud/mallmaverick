@@ -334,7 +334,7 @@ function getBlogDetailByName(slug, folderName){
 function getBlogBySlug(slug){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    var blogs = mallDataJSON.blogs
+    var blogs = mallDataJSON.blogs;
 }
 
 function getPostList(){
