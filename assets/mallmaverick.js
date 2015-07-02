@@ -757,6 +757,7 @@ function getObjects(obj, key, val) {
 
 
 function applyPromoJobsStyle(store_details){
+    console.log(store_details)
     if(store_details.promotions.length > 0){
         store_details.has_promotions_css = "inline;";
     }else{
