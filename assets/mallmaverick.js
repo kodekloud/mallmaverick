@@ -758,16 +758,16 @@ function getObjects(obj, key, val) {
 
 function applyPromoJobsStyle(store_details){
     if(store_details.promotions.length > 0){
-            store_details.has_promotions_css = "inline;";
-        }else{
-            store_details.has_promotions_css = "none;";
-        }
-        
-        if(store_details.jobs.length > 0){
-            store_details.has_jobs_css = "inline;";
-        }else{
-            store_details.has_jobs_css = "none;";
-        }
+        store_details.has_promotions_css = "inline;";
+    }else{
+        store_details.has_promotions_css = "none;";
+    }
+    
+    if(store_details.jobs.length > 0){
+        store_details.has_jobs_css = "inline;";
+    }else{
+        store_details.has_jobs_css = "none;";
+    }
 }
 
 
