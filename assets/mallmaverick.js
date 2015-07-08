@@ -167,6 +167,16 @@ function getStoresList(){
     return mallDataJSON.stores;
 }
 
+function getNewStoresList(){
+    var new_stores = [];
+    var stores = getStoresList();
+    $.each(stores, function(i, store){
+        if (store.is_new_store == true){
+            new_stores << store;
+        }
+    });
+}
+
 function getBanners(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
