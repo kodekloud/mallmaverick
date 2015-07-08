@@ -178,6 +178,17 @@ function getNewStoresList(){
     return new_stores;
 }
 
+function getComingSoonList(){
+    var new_stores = [];
+    var stores = getStoresList();
+    $.each(stores, function(i, store){
+        if (store.is_coming_soon_store == true){
+            new_stores.push(store);
+        }
+    });
+    return new_stores;
+}
+
 function getBanners(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
