@@ -175,6 +175,7 @@ function getNewStoresList(){
             new_stores << store;
         }
     });
+    return new_stores
 }
 
 function getBanners(){
