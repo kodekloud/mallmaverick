@@ -172,7 +172,7 @@ function getNewStoresList(){
     var stores = getStoresList();
     $.each(stores, function(i, store){
         if (store.is_new_store == true){
-            new_stores << store;
+            new_stores.push(store);
         }
     });
     return new_stores;
