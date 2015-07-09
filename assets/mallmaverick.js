@@ -714,7 +714,7 @@ function getPropertyHours(){
 function getRegHoursForDayIndex(day_index){
     var hours = getPropertyHours();
     for (i = 0; i < hours.length; i++) {
-        if(!hours[i].is_holiday && hours[i].day_of_week == day_index){
+        if(!hours[i].is_holiday && hours[i].day_of_week == day_index && hours[i].store_id == null){
             return hours[i];
         }
     }
