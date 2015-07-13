@@ -50,6 +50,7 @@ function loadMallData(callback){
 }
 
 function loadMallDataCached(callback){
+    console.log(mallData)
     if (mallData != null){
         log("hey I have some mall data already!");
         log(JSON.stringify(JSON.stringify(data)));
