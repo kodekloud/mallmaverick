@@ -201,6 +201,12 @@ function getFashions(){
     return mallDataJSON.fashions;
 }
 
+
+function getFashionBySlug(slug){
+    var fashions =  getFashions();
+    return getObjects(mallDataJSON.contests,'slug',slug)[0];
+}
+
 function getPopups(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
