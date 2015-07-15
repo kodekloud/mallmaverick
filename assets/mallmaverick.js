@@ -203,8 +203,7 @@ function getFashions(){
 
 
 function getFashionBySlug(slug){
-    var fashions =  getFashions();
-    return getObjects(mallDataJSON.contests,'slug',slug)[0];
+    return getObjects(mallDataJSON.fashions,'slug',slug)[0];
 }
 
 function getPopups(){
