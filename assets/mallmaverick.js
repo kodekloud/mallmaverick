@@ -370,6 +370,10 @@ function getBlogDataBySlug(slug){
     return blog;
 }
 
+getAllPublishedPosts(){
+    
+}
+
 function getBlogDetailByName(slug, folderName){
     var posts =  getBlogByName(folderName);
     return getObjects(posts,'slug',slug);
