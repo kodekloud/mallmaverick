@@ -440,11 +440,6 @@ function getNextPostBySlug(slug){
 
 function getPrevFashionBySlug(slug){
     var posts = getFashions();
-    posts.sort(function(a, b){
-        if(a.publish_date > b.publish_date) return -1;
-        if(a.publish_date < b.publish_date) return 1;
-        return 0;
-    });
     var prevPost;
     $.each( posts, function( index, value ) {
         if (value.slug == slug) {
@@ -457,11 +452,6 @@ function getPrevFashionBySlug(slug){
 }
 function getNextFashionBySlug(slug){
     var posts = getFashions();
-    posts.sort(function(b, a){
-        if(a.publish_date > b.publish_date) return -1;
-        if(a.publish_date < b.publish_date) return 1;
-        return 0;
-    });
     var nextPost;
     $.each( posts, function( index, value ) {
         if (value.slug == slug) {
