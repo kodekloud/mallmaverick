@@ -373,7 +373,7 @@ function getBlogDataBySlug(slug){
 getAllPublishedPosts(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    
+    var posts = [];
 }
 
 function getBlogDetailByName(slug, folderName){
