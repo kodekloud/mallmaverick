@@ -355,10 +355,10 @@ function getBlogByName(folderName){
 }
 
 function getBlogDataBySlug(slug){
-    
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
-   return getObjects(mallDataJSON.blogs,'slug',slug)[0];
+    var blog =  getObjects(mallDataJSON.blogs,'slug',slug)[0];
+    
 }
 
 function getBlogDetailByName(slug, folderName){
