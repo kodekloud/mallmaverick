@@ -378,7 +378,11 @@ function getAllPublishedPosts(){
     $.each(blogs, function(key, val){
         var p = val.posts;
         $.each(p, function(i, v){
-           posts.push(v); 
+            var publish_date = new Date(v.publish_date);
+            var today = new Date();
+            if (publish_date <= today){
+                posts.push(v); 
+            }
         });
     });
     return posts;
