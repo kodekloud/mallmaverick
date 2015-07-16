@@ -354,11 +354,12 @@ function getBlogByName(folderName){
     return folder[0].posts;
 }
 
-function getBlogInfoByName(folderName){
+function getBlogDataByName(folderName){
     
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     var blog_info = {}
+    blog_info.name = 
     var folder = [];
   
     $.each( mallDataJSON.blogs, function( index,  value) {
