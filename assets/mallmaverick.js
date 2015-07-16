@@ -446,7 +446,7 @@ function getPrevFashionBySlug(slug){
             return false;
         }else{
             prevPost = value;
-        };
+        }
     });
     return prevPost;
 }
@@ -458,7 +458,7 @@ function getNextFashionBySlug(slug){
             return false;
         }else{
             nextPost = value;
-        };
+        }
     });
     return nextPost;
 }
