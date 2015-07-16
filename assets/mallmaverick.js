@@ -438,6 +438,43 @@ function getNextPostBySlug(slug){
     return nextPost;
 }
 
+function getPrevFashionBySlug(slug){
+    var posts = getFashion();
+    posts.sort(function(a, b){
+        if(a.publish_date > b.publish_date) return -1;
+        if(a.publish_date < b.publish_date) return 1;
+        return 0;
+    });
+    var prevPost;
+    $.each( posts, function( index, value ) {
+        if (value.slug == slug) {
+            return false;
+        }else{
+            prevPost = value;
+        };
+    });
+    return prevPost;
+}
+function getNextPostBySlug(slug){
+    var posts = getPostList();
+    posts.sort(function(b, a){
+        if(a.publish_date > b.publish_date) return -1;
+        if(a.publish_date < b.publish_date) return 1;
+        return 0;
+    });
+    var nextPost;
+    $.each( posts, function( index, value ) {
+        if (value.slug == slug) {
+            return false;
+        }else{
+            nextPost = value;
+        };
+    });
+    return nextPost;
+}
+
+
+
 function getPromotionsList(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
