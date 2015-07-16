@@ -360,7 +360,7 @@ function getBlogDataBySlug(slug){
     var blog =  getObjects(mallDataJSON.blogs,'slug',slug)[0];
     var posts = []
     $.each(blog.posts, function(key, val){
-       if (val) 
+       var publish_date = new Date(val.publish_date);
     });
 }
 
