@@ -377,7 +377,7 @@ getAllPublishedPosts(){
     var posts = [];
     $.each(blogs, function(key, val){
         
-    })
+    });
     
 }
 
