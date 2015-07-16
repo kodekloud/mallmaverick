@@ -438,32 +438,6 @@ function getNextPostBySlug(slug){
     return nextPost;
 }
 
-function getPrevFashionBySlug(slug){
-    var fashions = getFashions();
-    var prev_fashion;
-    $.each( fashions, function( index, value ) {
-        if (value.slug == slug) {
-            return false;
-        }else{
-            prevPost = value;
-        }
-    });
-    return prevPost;
-}
-function getNextFashionBySlug(slug){
-    var posts = getFashions();
-    var nextPost;
-    $.each( posts, function( index, value ) {
-        if (value.slug == slug) {
-            return false;
-        }else{
-            nextPost = value;
-        }
-    });
-    return nextPost;
-}
-
-
 
 function getPromotionsList(){
     initData();
