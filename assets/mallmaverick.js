@@ -370,7 +370,7 @@ function getBlogDataBySlug(slug){
     return blog;
 }
 
-getAllPublishedPosts(){
+function getAllPublishedPosts(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     var blogs = mallDataJSON.blogs;
