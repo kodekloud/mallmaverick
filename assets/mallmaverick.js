@@ -358,7 +358,10 @@ function getBlogDataBySlug(slug){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     var blog =  getObjects(mallDataJSON.blogs,'slug',slug)[0];
-    
+    var posts = []
+    $.each(blog.posts, function(key, val){
+       if (val) 
+    });
 }
 
 function getBlogDetailByName(slug, folderName){
