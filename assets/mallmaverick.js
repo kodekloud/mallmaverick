@@ -354,6 +354,20 @@ function getBlogByName(folderName){
     return folder[0].posts;
 }
 
+function getBlogByName(folderName){
+    
+    initData();
+    var mallDataJSON = JSON.parse(sessionStorage.mallData);
+    var folder = [];
+  
+    $.each( mallDataJSON.blogs, function( index,  value) {
+        if(value.name == folderName){
+            folder.push(value);
+        }
+    });
+    return folder[0].posts;
+}
+
 function getBlogDetailByName(slug, folderName){
     var posts =  getBlogByName(folderName);
     return getObjects(posts,'slug',slug)[0];
