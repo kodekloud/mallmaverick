@@ -358,16 +358,7 @@ function getBlogDataBySlug(slug){
     
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
-    var blog_info = {}
-    blog_info.name = 
-    var folder = [];
-  
-    $.each( mallDataJSON.blogs, function( index,  value) {
-        if(value.name == folderName){
-            folder.push(value);
-        }
-    });
-    return folder[0].posts;
+   return getObjects(mallDataJSON.blogs,'slug',slug)[0];
 }
 
 function getBlogDetailByName(slug, folderName){
