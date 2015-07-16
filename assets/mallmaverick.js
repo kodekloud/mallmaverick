@@ -439,8 +439,8 @@ function getNextPostBySlug(slug){
 }
 
 function getPrevFashionBySlug(slug){
-    var posts = getFashions();
-    var prevPost;
+    var fashion = getFashions();
+    var prev_fashion;
     $.each( posts, function( index, value ) {
         if (value.slug == slug) {
             return false;
