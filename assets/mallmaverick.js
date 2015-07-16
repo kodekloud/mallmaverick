@@ -376,7 +376,7 @@ function getAllPublishedPosts(){
     var blogs = mallDataJSON.blogs;
     var posts = [];
     $.each(blogs, function(key, val){
-        
+        posts.push(val)
     });
     
 }
