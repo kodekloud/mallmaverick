@@ -378,7 +378,7 @@ function getAllPublishedPosts(){
     $.each(blogs, function(key, val){
         posts.push(val.posts)
     });
-    return posts
+    return posts;
     
 }
 
