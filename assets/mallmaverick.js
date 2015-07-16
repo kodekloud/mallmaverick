@@ -433,7 +433,7 @@ function getNextPostBySlug(slug){
             return false;
         }else{
             nextPost = value;
-        };
+        }
     });
     return nextPost;
 }
