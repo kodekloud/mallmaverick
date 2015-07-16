@@ -354,7 +354,7 @@ function getBlogByName(folderName){
     return folder[0].posts;
 }
 
-function getBlogByName(folderName){
+function getBlogInfoByName(folderName){
     
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
