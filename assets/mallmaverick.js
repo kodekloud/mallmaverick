@@ -366,6 +366,7 @@ function getBlogDataBySlug(slug){
            posts.push(val);
        }
     });
+    console.log(posts)
     blog.posts = posts;
     return blog;
 }
