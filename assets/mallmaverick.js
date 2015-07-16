@@ -456,7 +456,7 @@ function getPrevFashionBySlug(slug){
     return prevPost;
 }
 function getNextFashionBySlug(slug){
-    var posts = getPostList();
+    var posts = getFashion();
     posts.sort(function(b, a){
         if(a.publish_date > b.publish_date) return -1;
         if(a.publish_date < b.publish_date) return 1;
