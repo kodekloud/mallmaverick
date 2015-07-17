@@ -398,7 +398,7 @@ function getPrevPublishedPostBySlug(slug){
     var num = 0;
     $.each(posts, function(i, val){
         if (val.slug == post.slug){
-          num - i;
+          num = i;
         }
     });
     return posts[num-1];
@@ -412,7 +412,7 @@ function getNextPublishedPostBySlug(slug){
     var num = 0;
     $.each(posts, function(i, val){
         if (val.slug == post.slug){
-          num - i;
+          num = i;
         }
     });
     return posts[num+1];
