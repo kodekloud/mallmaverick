@@ -389,7 +389,7 @@ function getAllPublishedPosts(){
     
 }
 
-function getPrevPostBySlug(slug){
+function getPrevPublishedPostBySlug(slug){
     var posts = getPostList();
     posts.sort(function(a, b){
         if(a.publish_date > b.publish_date) return -1;
