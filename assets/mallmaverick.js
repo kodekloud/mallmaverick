@@ -401,7 +401,7 @@ function getPrevPublishedPostBySlug(slug){
           num - i;
         }
     });
-    return posts[num+1];
+    return posts[num-1];
 }
     
     
