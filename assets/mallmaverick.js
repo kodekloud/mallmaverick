@@ -394,12 +394,12 @@ function getPrevPublishedPostBySlug(slug){
     var posts = getAllPublishedPosts().sortBy(function(o){ return o.publish_date }).reverse();
     
     
-    return prevPost;
+    
 }
 function getNextPublishedPostBySlug(slug){
     var posts = getAllPublishedPosts().sortBy(function(o){ return o.publish_date }).reverse();
     
-    return nextPost;
+   
 }
 
 
