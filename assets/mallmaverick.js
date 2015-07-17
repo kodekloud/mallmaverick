@@ -405,6 +405,7 @@ function getNextPublishedPostBySlug(slug){
           num - i;
         }
     });
+    return posts[num+1]
 }
 
 
