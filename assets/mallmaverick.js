@@ -391,19 +391,7 @@ function getAllPublishedPosts(){
 
 function getPrevPublishedPostBySlug(slug){
     var posts = getAllPublishedPosts().sortBy(function(o){ return o.publish_date });
-    posts.sort(function(a, b){
-        if(a.publish_date > b.publish_date) return -1;
-        if(a.publish_date < b.publish_date) return 1;
-        return 0;
-    });
-    var prevPost;
-    $.each( posts, function( index, value ) {
-        if (value.slug == slug) {
-            return false;
-        }else{
-            prevPost = value;
-        }
-    });
+    
     return prevPost;
 }
 function getNextPublishedPostBySlug(slug){
