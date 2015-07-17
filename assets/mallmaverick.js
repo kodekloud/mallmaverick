@@ -390,7 +390,7 @@ function getAllPublishedPosts(){
 }
 
 function getPrevPublishedPostBySlug(slug){
-    var posts = getPostList();
+    var posts = getAllPublishedPosts();
     posts.sort(function(a, b){
         if(a.publish_date > b.publish_date) return -1;
         if(a.publish_date < b.publish_date) return 1;
@@ -407,7 +407,7 @@ function getPrevPublishedPostBySlug(slug){
     return prevPost;
 }
 function getNextPublishedPostBySlug(slug){
-    var posts = getPostList();
+    var posts = getAllPublishedPosts();
     posts.sort(function(b, a){
         if(a.publish_date > b.publish_date) return -1;
         if(a.publish_date < b.publish_date) return 1;
