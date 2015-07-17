@@ -402,7 +402,7 @@ function getPrevPublishedPostBySlug(slug){
             return false;
         }else{
             prevPost = value;
-        };
+        }
     });
     return prevPost;
 }
