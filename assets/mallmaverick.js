@@ -406,7 +406,8 @@ function getPostDetailsBySlug(slug){
 }
 
 function getPublishedPostDetailsBySlug(slug){
-    var posts = getAllPublishedPosts()    
+    var posts = getAllPublishedPosts();
+     return getObjects(mallDataJSON.blogs[0].posts,'slug',slug)[0];
 }
 
 function getPostsByTag(tag){
