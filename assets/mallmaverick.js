@@ -392,7 +392,17 @@ function getAllPublishedPosts(){
 function getPrevPublishedPostBySlug(slug){
     var post = getPublishedPostDetailsBySlug(slug);
     var posts = getAllPublishedPosts().sortBy(function(o){ return o.publish_date }).reverse();
-    
+    function getNextPublishedPostBySlug(slug){
+    var post = getPublishedPostDetailsBySlug(slug)[0];
+    var posts = getAllPublishedPosts().sortBy(function(o){ return o.publish_date }).reverse();
+    var num = 0;
+    $.each(posts, function(i, val){
+        if (val.slug == post.slug){
+          num - i;
+        }
+    });
+    return posts[num+1];
+}
     
     
 }
