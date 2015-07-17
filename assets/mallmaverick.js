@@ -389,6 +389,43 @@ function getAllPublishedPosts(){
     
 }
 
+function getPrevPostBySlug(slug){
+    var posts = getPostList();
+    posts.sort(function(a, b){
+        if(a.publish_date > b.publish_date) return -1;
+        if(a.publish_date < b.publish_date) return 1;
+        return 0;
+    });
+    var prevPost;
+    $.each( posts, function( index, value ) {
+        if (value.slug == slug) {
+            return false;
+        }else{
+            prevPost = value;
+        };
+    });
+    return prevPost;
+}
+function getNextPublishedPostBySlug(slug){
+    var posts = getPostList();
+    posts.sort(function(b, a){
+        if(a.publish_date > b.publish_date) return -1;
+        if(a.publish_date < b.publish_date) return 1;
+        return 0;
+    });
+    var nextPost;
+    $.each( posts, function( index, value ) {
+        if (value.slug == slug) {
+            return false;
+        }else{
+            nextPost = value;
+        }
+    });
+    return nextPost;
+}
+
+
+
 function getBlogDetailByName(slug, folderName){
     var posts =  getBlogByName(folderName);
     return getObjects(posts,'slug',slug);
