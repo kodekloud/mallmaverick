@@ -407,9 +407,8 @@ function getPrevPublishedPostBySlug(slug){
     return prevPost;
 }
 function getNextPublishedPostBySlug(slug){
-    var posts = getAllPublishedPosts();
-    var p = posts.sortBy(function(o){ return o.publish_date })
-    p.sort(function(b, a){
+    var posts = getAllPublishedPosts().sortBy(function(o){ return o.publish_date });
+    posts.sort(function(b, a){
         if(a.publish_date > b.publish_date) return -1;
         if(a.publish_date < b.publish_date) return 1;
         return 0;
