@@ -402,7 +402,7 @@ function getNextPublishedPostBySlug(slug){
     var num = 0
     $.each(posts, function(i, val){
         if (val.slug == post.slug){
-           console.log(i); 
+          num - i;
         }
     });
 }
