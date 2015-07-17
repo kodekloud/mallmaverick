@@ -407,7 +407,7 @@ function getPostDetailsBySlug(slug){
 
 function getPublishedPostDetailsBySlug(slug){
     var posts = getAllPublishedPosts();
-     return getObjects(posts,'slug',slug)[0];
+     return getObjects(posts,'slug',slug);
 }
 
 function getPostsByTag(tag){
