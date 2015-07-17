@@ -391,12 +391,13 @@ function getAllPublishedPosts(){
 
 function getPrevPublishedPostBySlug(slug){
     var post = getPublishedPostDetailsBySlug(slug);
-    var posts = getAllPublishedPosts().sortBy(function(o){ return o.publish_date });
+    var posts = getAllPublishedPosts().sortBy(function(o){ return o.publish_date }).reverse();
+    
     
     return prevPost;
 }
 function getNextPublishedPostBySlug(slug){
-    var posts = getAllPublishedPosts().sortBy(function(o){ return o.publish_date });
+    var posts = getAllPublishedPosts().sortBy(function(o){ return o.publish_date }).reverse();
     
     return nextPost;
 }
