@@ -397,7 +397,7 @@ function getPrevPublishedPostBySlug(slug){
     var posts = getAllPublishedPosts().sortBy(function(o){ return o.publish_date }).reverse();
     var num = 0;
     $.each(posts, function(i, val){
-        if (val.slug == post.slug){
+        if (val.id == post.id){
           num = i;
         }
     });
@@ -411,7 +411,7 @@ function getNextPublishedPostBySlug(slug){
     var posts = getAllPublishedPosts().sortBy(function(o){ return o.publish_date }).reverse();
     var num = 0;
     $.each(posts, function(i, val){
-        if (val.slug == post.slug){
+        if (val.id == post.id){
           num = i;
         }
     });
