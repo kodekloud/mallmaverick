@@ -374,8 +374,8 @@ function getBlogDataBySlug(slug){
                posts.push(val);
            }
         });
-    }
     blog.posts = posts;
+    }
     return blog;
 }
 
