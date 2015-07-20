@@ -377,7 +377,7 @@ function getBlogDataBySlug(slug){
     blog.posts = posts;
     }
     else{
-        blog=[]]
+        blog=[]
     }
     return blog;
 }
