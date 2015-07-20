@@ -365,14 +365,15 @@ function getBlogDataBySlug(slug){
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
     var blog =  getObjects(mallDataJSON.blogs,'slug',slug)[0];
     var posts = [];
-    
-    $.each(blog.posts, function(key, val){
-       var publish_date = new Date(val.publish_date);
-       var today = new Date();
-       if (publish_date <= today){
-           posts.push(val);
-       }
-    });
+    if (blog){
+        $.each(blog.posts, function(key, val){
+           var publish_date = new Date(val.publish_date);
+           var today = new Date();
+           if (publish_date <= today){
+               posts.push(val);
+           }
+        });
+    }
     blog.posts = posts;
     return blog;
 }
