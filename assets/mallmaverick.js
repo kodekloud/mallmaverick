@@ -376,6 +376,9 @@ function getBlogDataBySlug(slug){
         });
     blog.posts = posts;
     }
+    else{
+        blog=[]]
+    }
     return blog;
 }
 
