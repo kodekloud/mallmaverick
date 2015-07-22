@@ -197,7 +197,7 @@ function getBanners(){
 
 
 function getMobileBanners(){
-    
+    getRepoDetailsByName('mobile-homepage')
 }
 
 function getFashions(){
