@@ -195,6 +195,11 @@ function getBanners(){
     return mallDataJSON.banners;
 }
 
+
+function getMobileBanners(){
+    
+}
+
 function getFashions(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
