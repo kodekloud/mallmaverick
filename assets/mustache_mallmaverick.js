@@ -143,6 +143,7 @@ function renderStoresWithPromotionsTemplate(template_id,html_id){
     Mustache.parse(template_html);
     $.each( getStoresList() , function( key, val ) {
         if(val['promotions'].length > 0){
+            console.log(val['promotions'])
             localizeObject(val);
             var rendered = Mustache.render(template_html,val);
             html_item_list.push(rendered);
