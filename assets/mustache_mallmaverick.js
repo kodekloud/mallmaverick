@@ -141,6 +141,9 @@ function renderStoresWithPromotionsTemplate(template_id,html_id){
     var html_item_list = [];
     var template_html = $(template_id).html();
     Mustache.parse(template_html);
+    
+    // added to stop pulling stores with future promotions
+    
     $.each( getStoresList() , function( key, val ) {
         if(val['promotions'].length > 0){
             localizeObject(val);
