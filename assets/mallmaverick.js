@@ -723,6 +723,13 @@ function getStoreDetailsByID(store_id){
     return getObjects(mallDataJSON.stores,'id',store_id)[0];
 }
 
+function getStoreDetailArrayByIDs(collection){
+    store_array = []
+    $.each( collection , function( key, val ) {
+        console.log(val)
+    })
+}
+
 function getStoreCategories(){
     initData();
     var mallDataJSON = JSON.parse(sessionStorage.mallData);
