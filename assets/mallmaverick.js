@@ -726,8 +726,10 @@ function getStoreDetailsByID(store_id){
 function getStoreDetailArrayByIDs(collection){
     store_array = []
     $.each( collection , function( key, val ) {
-        console.log(val)
+        store_array.push(getStoreDetailsByID(val))
     })
+    
+    return store_array
 }
 
 function getStoreCategories(){
