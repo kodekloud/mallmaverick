@@ -343,6 +343,7 @@ function renderTodaysHours(template_id,html_id){
         day_hours.is_closed_css = "display:none";
     }
     setLocaleDateFormats(day_hours);
+    console.log(day_hours)
     var rendered = Mustache.to_html(template_html,day_hours);
     //console.log(rendered);
     $(html_id).html(rendered);
